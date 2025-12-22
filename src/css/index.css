@@ -1,0 +1,208 @@
+@charset 'UTF-8';
+/*Fontes*/
+@font-face {
+    font-family: "barlow_condesed";
+    src: url(../fonts/Barlow_Condensed/BarlowCondensed-Regular.ttf) format("truetype");
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: "barlow_condesed";
+    src: url(../fonts/Barlow_Condensed/BarlowCondensed-Bold.ttf) format("truetype");
+    font-weight: 400;
+    font-style: normal;
+}
+
+*{
+    font-family: "barlow_condesed";
+    color: white;
+    padding: 0;
+    margin: 0;
+}
+body{
+    background-color: #151515;
+}
+
+.container{
+    width: 100%;
+    height: 100vh;
+    background-color: #151515;
+}
+
+/*Hero*/
+
+#home{
+    display: flex;
+    flex-direction: column;
+}
+.hero_div{
+    width: 100%;
+    text-align: left;
+}
+    .hero_div h2,h1, p{
+        margin-left: 10%;
+    }
+    .hero_div h2{
+        font-size: 2.8rem;
+        margin-top: 26%;
+    }
+    .hero_div h1{
+        font-size: 3.3rem;
+    }
+    .hero_div p{
+        color: #7cacfb;
+    }
+    #text_hero{
+        height: 70%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    #btns_hero{
+        height: 16%;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: center;
+        gap: 10px;
+    }
+        .btn_hero{
+            background-color: #146bfa;
+            color: #151515;
+            font-size: 120%;
+            width: 120px;
+            height: 50px;
+            border: none;
+            border-radius: 10px;
+        }
+        #projects_btn{
+            width: 150px;
+        }
+        #contact_btn{
+            width: 100px;
+        }
+        #blog_btn{
+            width: 100px;
+        }
+        #aboutme_btn{
+            width: 150px;
+        }
+    
+/*projetos*/
+#projects{
+    display: flex;
+    text-align: center;
+    gap: 1%;
+    flex-direction: column;
+}
+    #projects h2{
+        font-size: 180%;
+    }
+    .projects_div{
+        width: 100%;
+        height: 40%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;   
+    }
+        .projects_div h3{
+            margin-top: 5px;
+            font-size: 130%;
+        }
+        .crossline{
+            width: 90%;
+            height: 3px;
+            background-color: #292929;
+        }
+        .article_container{
+            width: 100%;
+            height: 80%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+            .article_projects{
+                width: 70%;
+                height: 84%;
+                background-color: #292929;
+                border-radius: 10px;
+                margin-top: 15px;
+                display: flex;
+                flex-direction: column;
+                text-align: center;
+                align-items: center;
+                justify-content: center;
+            }
+                .article_container h4{
+                    font-size: 90%;
+                }
+                .article_container p{
+                    font-size: 90%;
+                    text-decoration: underline;
+                    color: #7cacfb;
+                }
+#about{
+    background-color: #292929;
+    border-radius: 28px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+    #about h2{
+        font-size: 185%;
+        margin-top: 10px;
+    }
+    #about p{
+        color: #7cacfb;
+    }
+    #stacks{
+        width: 100%;
+        height: 28%;
+        background-color: #151515;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-top: 10px;
+    }
+    #stacks_imgs{
+        width: 100%;
+        height: 50%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+        #stacks_imgs img{
+            width: 15%;
+        }
+    #personalme{
+        width: 100%;
+        height: 60%;
+    }    
+        #aboutme_personal{
+            width: 100%;
+            height: 80%;
+            margin-top: 37px;
+            background-color: #292929;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-around;
+        }   
+            #aboutme_personal img{
+                height: 75%;
+                margin-left: 15px;
+            }
+            #aboutme_personal p{
+                font-size: 94%;
+                margin-right: 7px;
+            }
+
+
+
+
+
+
+
