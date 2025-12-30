@@ -156,6 +156,7 @@ body{
     }
     #about p{
         color: #7cacfb;
+        margin: 0% 5% 0% 5%;
     }
     #stacks{
         width: 100%;
@@ -199,9 +200,81 @@ body{
                 font-size: 94%;
                 margin-right: 7px;
             }
+    #links_aboutme{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 10%;
+    }
+        #links_aboutme a img{
+            width: 90%;
+        }
 
+#blog{
+    display: none;
+}
 
+#contact{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 80vh;
+}
+    #contact h2{
+        font-size: 260%;
+        align-self: flex-start;
+        margin-left: 10%;
+        margin-top: 7%;
+    }
+    #contact p{
+        margin-left: 10%;
+        align-self: flex-start;
+    }
 
+    #contact_form{
+        width: 80%;
+        height: 77%;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 30px;
+    }
+        #contact_form div{
+            width: 100%;
+            height: auto;
+            color: #b1c1f1;
+        }
+            #contact_form div input{
+                width: 100%;
+                height: 26px;
+                background-color: #b1c1f1;
+                border: none;
+                border-radius: 5px;
+            }
+            #message{
+                height: 20vh;
+                width: 100%;
+                border: none;
+                border-radius: 5px;
+                background-color: #b1c1f1;
+            }
+            #send_message{
+                width: 50%;
+                height: 35px;
+                align-self: center;
+                color: #b1c1f1;
+                font-size: 130%;
+                background-color: #146bfa;
+                border: none;
+                border-radius: 5px;
+            }
+
+footer{
+    
+    width: 100%;
+    height: 7vh;
+}            
 
 
 
