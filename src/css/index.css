@@ -276,6 +276,40 @@ footer{
     height: 7vh;
 }            
 
+@media screen and (min-width: 768px){
+    #home{
+        flex-direction: row;        
+        align-items: center;
+        
+    }
+        .hero_div{
+            width: 50%;
+            height: 100%;
+            text-align: left;
+            justify-content: center;
+        }
+        #text_hero{
+            height: 100%;
+            
+        }
+            .hero_div h2,h1, p{
+                margin-left: 10%;
+            }
+            .hero_div h2{
+                font-size: 4.4rem;
+                margin-top: 0%;
+                margin-bottom: -5%;
+            }
+            .hero_div h1{
+                font-size: 5.3rem;
+            }
+            .hero_div p{
+                color: #7cacfb;
+            }
+        #btns_hero{
+        height: 100%;
+        }
+}
 
 
 
