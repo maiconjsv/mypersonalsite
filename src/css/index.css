@@ -309,6 +309,25 @@ footer{
         #btns_hero{
         height: 100%;
         }
+
+    .projects_div{
+        align-items: flex-start;   
+        height: 50%;
+    }
+    .projects_div h3{
+        margin-left: 4.6%;
+    }
+    .article_container{
+        width: 30%;
+        height: 80%;
+        justify-content: center;
+    }
+        .article_container h4{
+            font-size: 90%;
+        }
+        .article_container p{
+            margin-left: 0;
+        }
 }
 
 
