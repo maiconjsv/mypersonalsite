@@ -168,6 +168,7 @@ body{
         justify-content: center;
         margin-top: 10px;
     }
+        
     #stacks_imgs{
         width: 100%;
         height: 50%;
@@ -328,6 +329,66 @@ footer{
         .article_container p{
             margin-left: 0;
         }
+    #about h2{
+        font-size: 170%;
+    } 
+    #about p{
+        font-size: 110%;
+    }
+    #stacks{
+        flex-direction: row;    ;
+    }        
+    #stacks h2{
+        margin-left: 5%;
+        width: 10%;
+    }    
+
+    #stacks_imgs{
+        width: 50%;
+        height: 100%;
+        margin-left: 10%;
+    }
+
+    #stacks_imgs img{
+        width: 8%;
+    }
+    #personalme{
+        width: 100%;
+        height: 60%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    } 
+    #aboutme_personal{
+            width: 50%;
+            height: 100%;
+            margin-top: 0;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-around;
+        }   
+            #aboutme_personal img{
+                height: 85%;
+                margin-left: 15px;
+            }
+            #aboutme_personal p{
+                font-size: 105%;
+                margin-right: 7px;
+            }
+    #links_aboutme{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 10%;
+        width: 50%;
+        height: 100%;
+    }
+        #links_aboutme a img{
+            width: 110%;
+        }
+
 }
 
 
