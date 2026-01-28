@@ -12,6 +12,9 @@
     font-weight: 400;
     font-style: normal;
 }
+html {
+  scroll-behavior: smooth;
+}
 
 *{
     font-family: "barlow_condesed";
@@ -34,6 +37,7 @@ body{
 #home{
     display: flex;
     flex-direction: column;
+    transition: all ease 0.8s;
 }
 .hero_div{
     width: 100%;
@@ -76,6 +80,7 @@ body{
             border: none;
             border-radius: 10px;
         }
+            
         #projects_btn{
             width: 150px;
         }
@@ -310,6 +315,12 @@ footer{
         #btns_hero{
         height: 100%;
         }
+            .btn_hero:hover{
+                cursor: pointer;
+                transform: scale(1.05);
+                transition: all ease 0.3s;
+                height: 60px;
+            }
 
     .projects_div{
         align-items: flex-start;   
@@ -329,6 +340,19 @@ footer{
         .article_container p{
             margin-left: 0;
         }
+        
+        .article_projects:hover{
+            cursor: pointer;
+            transform: scale(1.02);
+            transition: all ease 0.3s;
+        }
+        .article_projects.scrolled{
+            box-shadow: 0 0 15px #146bfa;
+            transition: all ease 0.5s;
+            display: none;
+        }
+
+
     #about h2{
         font-size: 170%;
     } 
