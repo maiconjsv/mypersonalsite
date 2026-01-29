@@ -189,7 +189,7 @@ body{
         flex-direction: column;
         align-items: center;
         margin-top: 10px;
-        padding: 10px 0 100px 0;
+        padding: 10px 0 50px 0;
     }
     #stacks h2{
         margin-bottom: 40px;
@@ -205,13 +205,14 @@ body{
         margin: 10px 5px 10px 5px;
     }
         #stacks_imgs img{
-            width: 17%;
-            margin-top: 10px;
+            width: 14%;
+            margin: 10px 15px 10px 15px;
         }
         
-    #personalme{
+    .personalme{
         width: 100%;
-        height: 60%;
+        height: 1000vh;
+        
     }    
     /*
         #aboutme_personal{
@@ -406,12 +407,13 @@ footer p{
     }
 
     #stacks_imgs img{
-        width: 8%;
-    }
-    #personalme{
+            width: 14%;
+            margin: 10px 15px 10px 15px;
+        }
+    .personalme{
         width: 100%;
         display: flex;
-        flex: 1;
+        height: 20vh;
         flex-direction: row;
         align-items: center;
         background-color: aqua;
