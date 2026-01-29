@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maicon Vieira</title>
+    <link rel="shortcut icon" href="src/imgs/programming-code-signs.ico" type="image/x-icon">
+    <link rel="stylesheet" href="src/css/index.css">
+</head>
+<body>
+     <!-- HERO -->
+  <section id="home" class="container lazy-section">
+    <div class="hero_div" id="text_hero">
+        <h2>Hello, I’m</h2>
+        <h1>Maicon Vieira</h1>
+        <p>
+            This is my space to share projects, ideas and experiments with software.
+        </p>
+    </div>
+    <div class="hero_div" id="btns_hero">
+        <button data-target="projects" class="btn_hero" id="projects_btn">Projects</button>
+        <button data-target="contact" class="btn_hero" id="contact_btn">Contact</button>
+        <button data-target="blog" class="btn_hero" id="blog_btn">Blog</button>
+        <button data-target="about" class="btn_hero" id="aboutme_btn">About me</button>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="container lazy-section">
+    <h2>My Projects</h2>
+
+    <div class="projects_div">
+        <div class="crossline"></div>
+      <h3>Personal Projects</h3>
+      <div class="article_container">
+          <article class="article_projects">
+            <img src="src/imgs/catuaipatiomobile.png" alt="imagem do catuai app">
+            <h4>Yard control to Localiza Seminovos</h4>
+            <p><a href="https://github.com/maiconjsv/Sistema-para-Higienizador-de-frota" target="_blank" style="color: #7cacfb;">Know more</a></p>
+          </article>
+      </div>
+    </div>
+
+    <div class="projects_div">
+        <div class="crossline"></div>
+        <h3>Freelance Projects</h3>
+        <div class="article_container">
+            <article class="article_projects">
+                <img src="src/imgs/mmadvogadosmobile.png" alt="imagem do site mmadvogados">
+                <h4>M&M Advogados</h4>
+                <p><a href="https://macielemoraisadvogados.com.br/" target="_blank" style="color: #7cacfb;">Know more</a></p>
+            </article>
+        </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="container lazy-section">
+        <div id="text_about_intro">
+          <h2>About Me</h2>
+          <p>I work as a Technical Analyst at <span style="color: white;">Solus IT</span>, focusing on the maintenance, support, and integration of legacy systems developed in Delphi and Oracle Database, ensuring stability and continuity of production environments.</p>
+        </div>
+        <section id="stacks">
+              <h2>My Stacks</h2>
+            <div id="stacks_imgs">
+                <img src="src/imgs/javascript.png" alt="javascript" class="stacks_icons">
+                <img src="src/imgs/mysql.svg" alt="mysql" class="stacks_icons">
+                <!--<img src="src/imgs/5968252.png" alt="Delphi" class="stacks_icons">-->
+                <img src="src/imgs/firebase.png" alt="firebase" class="stacks_icons">
+                <img src="src/imgs/python.png" alt="python" class="stacks_icons">
+                <img src="src/imgs/c.svg" alt="c" class="stacks_icons">
+                <img src="src/imgs/css-3.svg" alt="css" class="stacks_icons">
+                <img src="src/imgs/html-5.svg" alt="html" class="stacks_icons">
+            </div>
+            <!--<p>
+                Click the icons to explore the stacks I use in my daily work.
+            </p>-->  
+        </section>
+        <section class="personalme lazy-section">
+            <div id="links_aboutme">
+              <a href="https://www.linkedin.com/in/maiconjsv/" target="_blank"><img src="src/imgs/LinkedIN_black.svg" alt="linkedin"></a>
+              <a href="https://github.com/maiconjsv" target="_blank"><img src="src/imgs/Github_black.svg" alt="github"></a>
+              <a href="#"><img src="src/imgs/Blogger_black.svg" alt="blogger"></a>
+            </div>
+        </section>
+    </section>
+
+  <!-- BLOG -->
+  <section id="blog" class="container" lazy-section>
+    <h2>Blog</h2>
+    <p>
+        Writing about code, games, systems and things that interest me.
+    </p>
+
+    <a href="#">Visit Blog</a>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="container" lazy-section>
+    <h2>Let's Connect</h2>
+    <p>LOREM IPSUM DOLORES LOREM LOIUT OPSUM DIGGUNDURUM</p>
+
+    <form id="contact_form">
+      <div>
+        <label for="name">Name</label><br />
+        <input type="text" id="name" name="name" />
+      </div>
+
+      <div>
+        <label for="email">Email</label><br />
+        <input type="email" id="email" name="email" />
+      </div>
+
+      <div>
+        <label for="subject">Subject</label><br />
+        <input type="text" id="subject" name="subject" />
+      </div>
+
+      <div>
+        <label for="message">Message</label><br />
+        <textarea id="message" name="message"></textarea>
+      </div>
+
+      <button type="submit" id="send_message">Send</button>
+    </form>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>
+      Maicon Vieira 2026
+    </p>
+  </footer>
+
+  <script src="src/js/index.js"></script>
+</body>
+</html>
