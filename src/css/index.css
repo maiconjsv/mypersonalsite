@@ -26,6 +26,19 @@ body{
     background-color: #151515;
 }
 
+.lazy-section {
+    opacity: 0;
+    transform: translateX(60px);
+    }
+        .lazy-section.loaded {
+            opacity: 1;
+            transform: translate(0);
+            transition: all ease 0.6s;
+        }
+
+
+
+
 .container{
     width: 100%;
     height: 100vh;
@@ -150,44 +163,57 @@ body{
                 }
 #about{
     background-color: #292929;
-    border-radius: 28px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 80vh;
+}
+#text_about_intro{
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-    #about h2{
+    #text_about_intro h2{
         font-size: 185%;
         margin-top: 10px;
     }
-    #about p{
+    #text_about_intro p{
         color: #7cacfb;
-        margin: 0% 5% 0% 5%;
+        margin: 3% 5% 0% 5%;
     }
     #stacks{
         width: 100%;
-        height: 28%;
+        height:  auto;
         background-color: #151515;
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: center;
         margin-top: 10px;
+        padding: 10px 0 100px 0;
     }
-        
+    #stacks h2{
+        margin-bottom: 40px;
+    }
     #stacks_imgs{
         width: 100%;
         height: 50%;
         display: flex;
+        flex-direction: row;
         justify-content: space-around;
+        flex-wrap: wrap;
         align-items: center;
+        margin: 10px 5px 10px 5px;
     }
         #stacks_imgs img{
-            width: 15%;
+            width: 17%;
+            margin-top: 10px;
         }
+        
     #personalme{
         width: 100%;
         height: 60%;
     }    
+    /*
         #aboutme_personal{
             width: 100%;
             height: 80%;
@@ -205,12 +231,15 @@ body{
             #aboutme_personal p{
                 font-size: 94%;
                 margin-right: 7px;
-            }
+            }*/
     #links_aboutme{
         display: flex;
         flex-direction: row;
         justify-content: center;
+        align-items: center;
         gap: 10%;
+        width: 100%;
+        height: 100%;
     }
         #links_aboutme a img{
             width: 90%;
@@ -277,10 +306,15 @@ body{
             }
 
 footer{
-    
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 100%;
     height: 7vh;
 }            
+footer p{
+    margin-left: 0;
+}
 
 @media screen and (min-width: 768px){
     #home{
@@ -359,10 +393,7 @@ footer{
     } 
     #about p{
         font-size: 110%;
-    }
-    #stacks{
-        flex-direction: row;    ;
-    }        
+    }     
     #stacks h2{
         margin-left: 5%;
         width: 10%;
@@ -379,12 +410,13 @@ footer{
     }
     #personalme{
         width: 100%;
-        height: 60%;
         display: flex;
+        flex: 1;
         flex-direction: row;
         align-items: center;
-    } 
-    #aboutme_personal{
+        background-color: aqua;
+    }
+    /*#aboutme_personal{
             width: 50%;
             height: 100%;
             margin-top: 0;
@@ -392,26 +424,22 @@ footer{
             flex-direction: row;
             align-items: center;
             justify-content: space-around;
-        }   
-            #aboutme_personal img{
-                height: 85%;
-                margin-left: 15px;
-            }
-            #aboutme_personal p{
-                font-size: 105%;
-                margin-right: 7px;
-            }
+            
+        }*/   
+    
+
     #links_aboutme{
         display: flex;
         flex-direction: row;
         justify-content: center;
         align-items: center;
         gap: 10%;
-        width: 50%;
-        height: 100%;
+        flex: 1;
+        height: 50px;
+        width: 100vw;
     }
         #links_aboutme a img{
-            width: 110%;
+            width: 90%;
         }
 
     #contact{
