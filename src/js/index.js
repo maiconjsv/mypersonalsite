@@ -11,7 +11,7 @@ document.querySelectorAll("button[data-target]").forEach(button => {
 
 
 
-// Lazy loading sections
+// Lazy loading section
 document.addEventListener("DOMContentLoaded", () => {
   const lazySections = document.querySelectorAll(".lazy-section");
 
