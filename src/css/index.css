@@ -59,7 +59,7 @@ body{
     text-align: left;
 }
     .hero_div h2,h1, p{
-        margin-left: 10%;
+        margin-left: 5%;
     }
     .hero_div h2{
         font-size: 2.8rem;
@@ -350,6 +350,9 @@ footer p{
                 font-size: 4.4rem;
                 margin-top: 0%;
                 margin-bottom: -5%;
+            }
+            .hero_div h2,h1{
+                margin-left: 10%;
             }
             #text_hero h1{
                 font-size: 5.3rem;

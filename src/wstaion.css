@@ -1,0 +1,97 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 0;
+    margin: 0;
+    color: white;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #151515;
+}
+
+.f_gifs{
+    width: 50%;
+}
+
+header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    background-color: #146bfa;
+    justify-content: right;
+    min-height: 10vh;
+}
+    #maiconvieira{
+        align-self: left;
+        margin-left: 0;
+        display: none;
+    }
+    #h_ul{
+        /*tratar disso dps com um menu hamburger*/
+        display: none;
+        flex-direction: row;        
+    }
+        #h_ul li{
+            color: #292929;
+            list-style: none;
+            font-weight: 900;
+        }
+section{
+    height: auto;
+    box-sizing: border-box;
+    padding: 5% 10% 5% 10%;
+    display: flex;
+    flex-direction: column;
+}        
+
+    #description h3{
+        margin-top: 15px;
+    }
+h1{
+    font-size: 200%;
+    font-weight: bold;
+}
+
+hr{
+    margin: 15px 0 15px 0;
+}
+#features{
+    background-color:#146bfa ;
+    border-radius: 10px;
+    margin: 5px 0 10px 0;
+}
+    #features h3{
+        text-align: center;
+    }
+    #features li{
+        color: #151515;
+        font-weight: 800;
+        
+        margin: 0 10px 0 10px;
+    }
+    #features b{
+        color: black;
+    }
+
+pre{
+    background-color: #292929;
+    margin: 10px 0 10px 0;
+}
+
+
+@media screen and (min-width: 768px){
+    .f_gifs{
+        width: 25%;
+    }
+    #h_ul{
+        /*tratar disso dps com um menu hamburger*/
+        display: flex;
+        flex-direction: row;        
+        gap: 20px;
+    }
+        #h_ul li{
+            margin-right: 10px;
+        }
+}
