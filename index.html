@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Maicon Vieira</title>
+    <link rel="stylesheet" href="src/splice/splide-4.1.3/dist/css/splide.min.css">
     <link rel="shortcut icon" href="src/imgs/programming-code-signs.ico" type="image/x-icon">
     <link rel="stylesheet" href="src/css/index.css">
 </head>
@@ -11,62 +12,107 @@
      <!-- HERO -->
   <section id="home" class="container lazy-section">
     <div class="hero_div" id="text_hero">
-        <h2>Hello, I’m</h2>
+        <h2>Olá, sou</h2>
         <h1>Maicon Vieira</h1>
         <p>
-            This is my space to share projects, ideas and experiments with software.
+            Esse é o meu espaço pessoal para falar sobre desenvolvimento, tecnologia e internet no geral.
         </p>
+        <div id="org_buttons">
+          <button data-target="projects" class="btn_hero" id="projects_btn">Projetos</button>
+          <button data-target="blog" class="btn_hero" id="blog_btn">Blog</button>
+          <button data-target="about" class="btn_hero" id="aboutme_btn">Sobre</button>
+        </div>
     </div>
-    <div class="hero_div" id="btns_hero">
-        <button data-target="projects" class="btn_hero" id="projects_btn">Projects</button>
-        <button data-target="contact" class="btn_hero" id="contact_btn">Contact</button>
-        <button data-target="blog" class="btn_hero" id="blog_btn">Blog</button>
-        <button data-target="about" class="btn_hero" id="aboutme_btn">About me</button>
+    <div  id="ultimas_publi">
+      <h3>Últimas publicações</h3>
+      <ul>
+        <li><a href="wstaion.html">
+          <img src="src/imgs/wstaion_mini.png" alt="wstaion">
+          <p>Documentação sobre meu projeto pessoal desenvolvido em C para produtividade.</p>
+        </a></li>
+      </ul>
+      <a href="#">Todas publicações</a>
     </div>
   </section>
 
   <!-- PROJECTS -->
-  <section id="projects" class="container lazy-section">
-    <h2>My Projects</h2>
+  <section id="projects" class="lazy-section">
+    <h2>Meus projetos</h2>
+    <section class="splide" aria-label="Splide Basic HTML Example">
+      <div class="splide__track">
+        <ul class="splide__list">
+          <li class="splide__slide">
+              <div class="card_project" id="mm_slipe">
+                <h3>Maciel & Morais Advogados</h3>
+                <p>Landing page desenvolvida com intuito de atrair <br> e captar clientes. Com integração ao Whatsapp e com foco <br>  em SEO e otimização para mecanismos de busca</p>
+                <h3>Ficha técnica</h3>
+                <p>Linguagem: <span style="color: white;">javascript, HTML5 e CSS3</span></p>
+                <p>Plataforma: <span style="color: white;">Web</span></p>
+                <h3>Link</h3>
+                <a href="https://macielemoraisadvogados.com.br/" target="_blank">https://macielemoraisadvogados.com.br/</a>
+                <small>#Projeto freelance</small>
+            </div>            
+          </li>          
+          <li class="splide__slide" >
+              <div class="card_project" id="wstaion_slipe">
+                <h3>Wstaion</h3>
+                <p>Sistema CLI para produtividade no dia a dia do trabalho. <br> Inspirado pelo curso CS50 de Harvad como um desafio de <br> controle total do código e sem abstrações.</p>
+                <h3>Ficha técnica</h3>
+                <p>Linguagem: <span style="color: white;">C</span></p>
+                <p>Plataforma: <span style="color: white;">Windows & Linux</span></p>
+                <h3>Repositório</h3>
+                <a href="https://github.com/maiconjsv/wstaion" target="_blank">https://github.com/maiconjsv/wstaion</a>
+                <small>#Projeto pessoal</small>
+            </div>
+          </li>
+          <li class="splide__slide">
+              <div class="card_project" id="catuai_slipe">
+                <h3>Sistema web para controle de pátio</h3>
+                <p>Desenvolvido para gerenciamento do pátio para <br>o quiosque da Localiza S/A no shopping Catuaí. <br>Permitindo aos vendedores do quiosque ter controle sobre o <br> pátio de veículos no subsolo </p>
+                <h3>Ficha técnica</h3>
+                <p>Linguagem: <span style="color: white;">javascript, HTML5, CSS3 e Firebase</span></p>
+                <p>Plataforma: <span style="color: white;">Web</span></p>
+                <h3>Link</h3>
+                <a href="https://github.com/maiconjsv/Sistema-para-Higienizador-de-frota" target="_blank">https://github.com/maiconjsv/Sistema-para-Higienizador-de-frota</a>
+      
+            </div>            
+          </li>
+        </ul>
+      </div>
+    </section>
+  </section>
+    <!-- BLOG -->
+  <section id="blog" class="container">
+    <section id="links_posts">
+      <ul id="lista">
+        <li class="link_post_card">
+            <div class="img_link_post">
 
-    <div class="projects_div">
-        <div class="crossline"></div>
-      <h3>Personal Projects</h3>
-      <div class="article_container">
-          <article class="article_projects">
-            <img src="src/imgs/catuaipatiomobile.png" alt="imagem do catuai app">
-            <h4>Yard control to Localiza Seminovos</h4>
-            <p><a href="https://github.com/maiconjsv/Sistema-para-Higienizador-de-frota" target="_blank" style="color: #7cacfb;">Know more</a></p>
-          </article>
-          <article class="article_projects">
-            <img src="src/imgs/wstaion_mobile.jpg" alt="imagem do sistema wstaion">
-            <h4>Wstaion</h4>
-            <p><a href="wstaion.html" target="_blank" style="color: #7cacfb;">Know more</a></p>
-          </article>
+            </div>
+            <div class="txt_link_post">
+              <h5>Porque titititititi porqua</h5>
+            </div>
+        </li>
+        <li class="link_post"></li>
+        <li class="link_post"></li>
+        <li class="link_post"></li>
+      </ul>
+    </section>
+    <div id="intro_blog">
+      <img src="src/imgs/blog_image.png" alt="Imagem de um computador">
+      <div id="txt_blog">
+        <h3>Blog de Tecnologia e Desenvolvimento onde eu falo sobre programação, tecnologia, livros, games e o futuro da internet.</h3>
       </div>
     </div>
-
-    <div class="projects_div">
-        <div class="crossline"></div>
-        <h3>Freelance Projects</h3>
-        <div class="article_container">
-            <article class="article_projects">
-                <img src="src/imgs/mmadvogadosmobile.png" alt="imagem do site mmadvogados">
-                <h4>M&M Advogados</h4>
-                <p><a href="https://macielemoraisadvogados.com.br/" target="_blank" style="color: #7cacfb;">Know more</a></p>
-            </article>
-        </div>
-    </div>
   </section>
-
   <!-- ABOUT -->
   <section id="about" class="container lazy-section">
         <div id="text_about_intro">
-          <h2>About Me</h2>
-          <p>I work as a Technical Analyst at <span style="color: white;">Solus IT</span>, focusing on the maintenance, support, and integration of legacy systems developed in Delphi and Oracle Database, ensuring stability and continuity of production environments.</p>
+          <h2>Sobre</h2>
+          <p>Atualmente trabalho como analista de suporte na<span style="color: white;">Solus IT</span>, trabalhando com manutenção de sistema legado em Delphi, PHP e Oracle SQL, além de ser entusiasta no desenvolvimento web com python.</p>
         </div>
         <section id="stacks">
-              <h2>My Stacks</h2>
+              <h2>Minhas stacks</h2>
             <div id="stacks_imgs">
                 <img src="src/imgs/javascript.png" alt="javascript" class="stacks_icons">
                 <img src="src/imgs/mysql.svg" alt="mysql" class="stacks_icons">
@@ -89,16 +135,6 @@
             </div>
         </section>
     </section>
-
-  <!-- BLOG -->
-  <section id="blog" class="container">
-    <h2>Blog</h2>
-    <p>
-        Writing about code, games, systems and things that interest me.
-    </p>
-
-    <a href="#">Visit Blog</a>
-  </section>
 
   <!-- CONTACT 
   <section id="contact" class="container lazy-section" >
@@ -136,7 +172,13 @@
       Maicon Vieira 2026
     </p>
   </footer>
-
+<script src="src/splice/splide-4.1.3/dist/js/splide.min.js"></script>
+<script>
+  document.addEventListener( 'DOMContentLoaded', function() {
+    var splide = new Splide( '.splide' );
+    splide.mount();
+  } );
+</script>
   <script src="src/js/index.js"></script>
 </body>
 </html>

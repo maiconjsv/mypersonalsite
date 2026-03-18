@@ -29,7 +29,7 @@ body{
 
 .lazy-section {
     opacity: 0;
-    transform: translateY(60px);
+    transform: translateY(5px);
     }
         .lazy-section.loaded {
             opacity: 1;
@@ -114,63 +114,57 @@ body{
 /*projetos*/
 #projects{
     display: flex;
-    text-align: center;
     gap: 1%;
     flex-direction: column;
-    height: auto;
-}
+    padding: 2rem 0;
+    align-items: center;
+    background-color: #0c46a3;
+}/*
     #projects h2{
         font-size: 180%;
         margin-bottom: 5px;
+        
     }
-    .projects_div{
+                
+    .splide{
         width: 100%;
-        height: auto;
-        padding: 10px 0 30px 0;
-        display: flex;
-        flex-direction: column;
-        align-items: center;   
+        min-height: 250px;
+    }                
+    .splide__track,
+    .splide__list {
+        height: 100%;
     }
-        .projects_div h3{
-            margin-top: 5px;
-            margin-bottom: 5px;
-            font-size: 130%;
-        }
-        .crossline{
-            width: 90%;
-            height: 3px;
-            background-color: #292929;
-        }
-        .article_container{
-            width: 100%;
-            height: 80%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-            .article_projects{
-                width: 70%;
-                height: auto;
-                background-color: #292929;
-                border-radius: 10px;
-                margin-top: 15px;
-                display: flex;
-                flex-direction: column;
-                text-align: center;
-                align-items: center;
-                justify-content: center;
-            }
-                .article_container h4{
-                    font-size: 90%;
-                }
-                .article_container p{
-                    font-size: 90%;
-                    text-decoration: underline;
-                    color: #7cacfb;
-                    margin-left: 0;   
-                    padding: 5px 0 5px 0;
-                }
+
+.splide__slide {
+  display: flex;
+  height: 250px; /* 👈 define a altura real do slide 
+}
+.card_project {
+    /*background-image: url(../imgs/wstaion-slipper2.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 1rem;
+    transition: 0.3s;
+    height: 100%;
+    width: 100%;        
+}
+
+.card_project h3 {
+  color: white;
+  margin-bottom: 5px;
+}
+
+.card_project p {
+  color: #aaa;
+  font-size: 0.9rem;
+}
+
+/* efeito hover 
+.card_project:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+}*/
 #about{
     background-color: #292929;
     display: flex;
@@ -224,25 +218,6 @@ body{
         height: 1000vh;
         
     }    
-    /*
-        #aboutme_personal{
-            width: 100%;
-            height: 80%;
-            margin-top: 37px;
-            background-color: #292929;
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: space-around;
-        }   
-            #aboutme_personal img{
-                height: 75%;
-                margin-left: 15px;
-            }
-            #aboutme_personal p{
-                font-size: 94%;
-                margin-right: 7px;
-            }*/
     #links_aboutme{
         display: flex;
         flex-direction: row;
@@ -257,8 +232,46 @@ body{
         }
 
 #blog{
-    display: none;
+    display: flex;
+    flex-direction: row;
+    height: 95vh;
 }
+    #intro_blog{
+
+        width: 60%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+        #txt_blog{
+            text-align: left;
+            width: 600px;
+            margin-left: 10px;
+        }
+
+    #links_posts{
+        
+        width: 40%;
+        height: 100%;
+        overflow-y: auto;        
+    }
+        #lista{
+            list-style: none;
+            padding: 0;
+            margin: 0;  
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+        }
+            .link_post_card{
+                background: #cc1717;
+                padding: 15px;
+                width: 70%;
+                height: 160px;
+                margin-top: 20px;
+            }
 
 #contact{
     display: flex;
@@ -331,7 +344,8 @@ footer p{
     #home{
         flex-direction: row;        
         align-items: center;
-        
+        height: 100vh;
+        justify-content: space-between;
     }
         .hero_div{
             width: 50%;
@@ -339,8 +353,15 @@ footer p{
             text-align: left;
             justify-content: center;
         }
+
+        #koda{
+            width: 30%;
+        }
+
         #text_hero{
             height: 100%;
+            display: flex;
+            flex-direction: column;
             
         }
             #text_hero p{
@@ -360,9 +381,42 @@ footer p{
             #text_hero p{
                 color: #7cacfb;
             }
-        #btns_hero{
-        height: 100%;
+        #org_buttons{
+            margin: 5% 0 0 10%;
         }
+        #ultimas_publi{
+        height: 100%;
+        width: 26%;
+        background-color: #292929;
+        display: flex;
+        flex-direction: column;
+        }
+            #ultimas_publi a{
+                margin: 10px 0 0 10px;
+            }
+            #ultimas_publi h3{
+                margin: 10px 0 10px 10px;
+            }
+            #ultimas_publi ul li p{
+                margin: 1px 0 10px 0;
+            }
+
+            #ultimas_publi ul li{
+                background-color: #146bfa;
+                width: 85%;
+                margin-left: 10px;
+                list-style: none;
+                padding: 10px;
+                text-align: left;
+                cursor: pointer;
+                border:  solid #151515 2px;
+            }
+                #ultimas_publi ul li:hover{
+                    background-color: #0c46a3;
+                    transition: all ease 0.6s;
+                    border-radius: 10px;
+                }
+
             .btn_hero:hover{
                 cursor: pointer;
                 transform: scale(1.05);
@@ -370,47 +424,72 @@ footer p{
                 height: 60px;
             }
 
-    .projects_div{
-        align-items: flex-start;   
-        height: auto;
-        width: 100%;
-    }
-    .projects_div h3{
-        margin-left: 4.6%;
-    }
-    .article_container{
-        width: 100%;
-        height: 80%;
-        justify-content: center;
+    #projects{
+        display: flex;
+        gap: 1%;
+        flex-direction: column;
+        padding: 2rem 0;
         align-items: center;
-        flex-direction: row;
-        gap: 100px;
+        background-color: #151515;
+    }   
+    #projects h2{
+        font-size: 180%;
+        margin-bottom: 5px;
     }
-        .article_container h4{
-            font-size: 90%;
-            font-family: Arial, Helvetica, sans-serif;
-        }
-        .article_container p{
-            margin-left: 0;
-        }
-        
-        .article_projects{
-            width: 23%;
-            height: auto;
-            margin-top: 15px;
-        }
+                
+    .splide{
+        width: 100%;
+        min-height: 250px;
+    }                
+    .splide__track,
+    .splide__list {
+        height: 100%;
+    }
 
-        .article_projects:hover{
-            cursor: pointer;
-            transform: scale(1.02);
-            transition: all ease 0.3s;
-        }
-        .article_projects.scrolled{
-            box-shadow: 0 0 15px #146bfa;
-            transition: all ease 0.5s;
-            display: none;
-        }
+.splide__slide {
+  display: flex;
+  height: 280px; 
+}
+#wstaion_slipe {
+    background-image: url(../imgs/wstaion-slipper1.png);
+}
+#mm_slipe{
+    background-image: url(../imgs/mmadvs.png);    
+}
+#catuai_slipe{
+    background-image: url(../imgs/catuai.png);
+}
+.card_project {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: 0.3s;
+    height: 100%;
+    width: 100%;        
+}
 
+.card_project h3 {
+  color: white;
+  margin-top: 20px;
+  margin-left: 5%;
+}
+
+.card_project p {
+  color: #aaa;
+  margin-left: 5%;
+}
+.card_project a{
+    color: #aaa;
+    margin-left: 5%;
+}
+    .card_project a:hover{
+        color: white;
+    }
+.card_project small{
+    color: #aaa;
+    margin-left: 5%;
+}
+           
     #about{
         height: auto;
     }
