@@ -247,11 +247,10 @@ body{
         #txt_blog{
             text-align: left;
             width: 600px;
-            margin-left: 10px;
         }
 
     #links_posts{
-        
+
         width: 40%;
         height: 100%;
         overflow-y: auto;        
