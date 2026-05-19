@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookCase - Dev</title>
+
+    <link rel="shortcut icon" href="img/favicon.ico" />
+
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Estilo css -->
+    <link rel="stylesheet" href="estilo.css">
+
+</head>
+<body>
+
+    <div class="container">
+
+        <!-- sidebar -->
+        <div class="sidebar">
+            <img src="img/logo_bookcase_edited.png" class="logo" alt="Logo da documentação">
+
+            <div class="navegacao">
+                <ul>
+                    <li><a href="index.html" onclick="esconderMenu()">Inicio</a></li>
+                    <li><a href="index.html#requisitos" onclick="esconderMenu()">Funcionalidades</a></li>
+                    <li><a href="index.html#instalacao" onclick="esconderMenu()">Instalação</a></li>
+                    <li><a href="desenvolvimento.html" onclick="esconderMenu()">Solicitar desenvolvimento</a></li>
+                    <li><a href="suporte.html" onclick="esconderMenu()">Suporte</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- sidebar -->
+
+        <!-- Conteúdo -->
+        <div class="conteudo-site">
+
+            <a href="#" class="menu" onclick="menu()" id="menu">
+                <img src="img/menu.svg" alt="Botão menu do site">
+            </a>
+
+            <h1>Solicitar desenvolvimento</h1>
+            <hr class="linha-divisoria">
+
+            <section id="suporte">
+
+                <h2>ABRIR CHAMADO DE DESENVOLVIMENTO</h2>
+                <hr class="linha-divisoria">
+
+                <p>
+                    Preencha o formulário abaixo para ser realizado o entendimento inicial da solicitação.
+                </p>
+
+                <p>
+                    Quanto mais detalhes forem enviados, mais rápido será o atendimento.
+                </p>
+
+                <div class="formulario-container">
+
+                    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSf3MKm0XUHICpio8EN79uhGkZEEEpWYw-Bhh9J_OYR_awDD2A/viewform?embedded=true" width="640" height="2546" frameborder="0" marginheight="0" marginwidth="0">
+                        Carregando…
+                    </iframe>
+
+                </div>
+
+            </section>
+
+            <!-- Seta -->
+            <a href="#menu" class="seta-up">
+                <img src="img/seta.png" alt="Subir para o topo">
+            </a>
+            <!-- Seta -->
+
+        </div>
+
+    </div>
+
+    <script>
+
+        function menu() 
+        {
+            var conteudoSite = document.querySelector('.conteudo-site')
+            var sidebar = document.querySelector('.sidebar')
+
+            sidebar.classList.toggle('active')
+            conteudoSite.classList.toggle('active')
+        }
+
+        function esconderMenu()
+        {
+            var tamanhoTela = window.innerWidth;
+
+            if(tamanhoTela < 600)
+            {
+                var sidebar = document.querySelector('.sidebar')
+                var conteudoSite = document.querySelector('.conteudo-site')
+
+                sidebar.classList.remove('active')
+                conteudoSite.classList.remove('active')
+            }
+        }
+
+    </script>
+
+</body>
+</html>

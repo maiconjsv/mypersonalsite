@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Módulo Caixa - BookCase</title>
+
+    <link rel="shortcut icon" href="../img/favicon.ico" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../estilo.css">
+
+</head>
+<body>
+
+<div class="container">
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+
+        <img src="../img/logo_bookcase_edited.png" class="logo" alt="Logo BookCase">
+
+        <div class="navegacao">
+            <ul>
+                <li><a href="../index.html">Voltar ao início</a></li>
+                <li><a href="#visao-geral" onclick="esconderMenu()">Visão geral</a></li>
+                <li><a href="#duvidas" onclick="esconderMenu()">Dúvidas comuns</a></li>
+                <li><a href="desenvolvimento.html" onclick="esconderMenu()">Solicitar desenvolvimento</a></li>
+                <li><a href="suporte.html" onclick="esconderMenu()">Suporte</a></li>                
+            </ul>
+        </div>
+
+    </div>
+    <!-- Sidebar -->
+
+    <!-- Conteúdo -->
+    <div class="conteudo-site">
+
+        <a href="#" class="menu" onclick="menu()" id="menu">
+            <img src="../img/menu.svg" alt="Menu">
+        </a>
+
+        <h1>Caixa</h1>
+
+        <hr class="linha-divisoria">
+
+        <!-- Visão Geral -->
+        <section id="visao-geral">
+
+            <h2>VISÃO GERAL</h2>
+
+            <hr class="linha-divisoria">
+
+            <p>
+                O controle de caixa permite de maneira simples, auxiliar no controle da venda de livros e outros produtos, permitindo realizar a venda de forma rápida.
+            </p>
+
+            <p>
+                Esta página reúne manuais rápidos e explicações sobre cada funcionalidade disponível no caixa.
+            </p>
+
+        </section>
+
+        <!-- Lista principal -->
+        <section id="telas">
+
+            <h2>Funções de caixa</h2>
+
+            <hr class="linha-divisoria">
+
+            <p>
+                Utilize a lista abaixo para acessar rapidamente a documentação da função que deseja.
+            </p>
+
+            <div class="paginas">
+
+                <ul>
+
+                    <li>
+                        <a href="#tela-caixa">
+                            Tela Caixa
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#movimentacoes-caixa">Movimentações de caixa</a>
+                    </li>
+
+                    <li>
+                        <a href="#duvidas">
+                            Dúvidas comuns
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </section>
+
+        <section id="tela-caixa">
+
+            <h2>Caixa</h2>
+            <small>Caminho: Caixa/Caixa</small>
+
+            <hr class="linha-divisoria">
+
+            <p>
+                Toda operação de vendas pode ser realizada pela tela caixa. O usuário pode realizar a busca do produto através da barra de pesquisa superior e 
+                inserir os produtos no carrinho para finalizar a venda.
+            </p>
+            <img src="../img/caixa/tela-caixa.png" alt="tela de caixa" class="imgs-docs" >
+
+            <h3>Funções disponíveis:</h3>
+
+            <ul>
+                <li>Busca de item por nome ou título</li>
+                <li>Controle do carrinho do cliente durante a venda</li>
+                <li>Soma automática do valor da venda com base nos produtos do carrinho</li>
+                <li>Escolha da forma de pagamento</li>
+                <li>Registro de venda</li>
+            </ul>
+
+            <p>
+                Sempre que for realizada uma venda, ela ficará gravada na tela <a href="#movimentacoes-caixa">Movimentações de caixa</a>
+            </p>
+
+        </section>
+
+        <!-- Listagem -->
+        <section id="movimentacoes-caixa">
+
+            <h2>MOVIMENTAÇÕES DE CAIXA</h2>
+            <small>Caminho: Caixa/ Movimentações de caixa</small>
+
+            <hr class="linha-divisoria">
+
+            <p>
+                Essa tela tem por função listar todas as movimentações de caixa do sebo com base no filtro selecionado, onde é possível escolher visualizar movimentações
+                de um período específico ou todas as movimentações.
+            </p>
+            <img src="../img/caixa/movimentacao-caixa.png" alt="Tela de movimentação de caixa" class="imgs-docs">
+
+            <h3>Nesta tela você pode:</h3>
+
+            <ul>
+                <li>Listar movimentações no caixa, com valor, data, total de itens e usuário que realizou a venda.</li>
+                <li>Exportar a movimentação para CSV</li>
+            </ul>
+
+        </section>
+
+        <!-- Dúvidas -->
+        <section id="duvidas">
+
+            <h2>DÚVIDAS COMUNS</h2>
+
+            <hr class="linha-divisoria">
+
+            <h3>Um item que está em estoque não está aparecendo na barra de pesquisa do caixa.</h3>
+
+            <p>
+                Acesse o caminho <i>Livros/ Listar livros</i>, ou <i>Produtos/ Listar produtos</i> e verifique se o item em questão está com saldo acima de 0, ou não possui
+            </p>
+
+            <h3>Posso editar um livro já cadastrado?</h3>
+
+            <p>
+                Sim. Basta acessar a listagem de livros e clicar no livro que a tela de edição irá abrir..
+            </p>
+
+        </section>
+
+        <!-- Seta -->
+        <a href="#menu" class="seta-up">
+            <img src="../img/seta.png" alt="Voltar ao topo">
+        </a>
+
+    </div>
+    <!-- Conteúdo -->
+
+</div>
+
+<script>
+
+    function menu()
+    {
+        var conteudoSite = document.querySelector('.conteudo-site')
+        var sidebar = document.querySelector('.sidebar')
+
+        sidebar.classList.toggle('active')
+        conteudoSite.classList.toggle('active')
+    }
+
+    function esconderMenu()
+    {
+        var tamanhoTela = window.innerWidth;
+
+        if(tamanhoTela < 600)
+        {
+            var sidebar = document.querySelector('.sidebar')
+            var conteudoSite = document.querySelector('.conteudo-site')
+
+            sidebar.classList.remove('active')
+            conteudoSite.classList.remove('active')
+        }
+    }
+
+</script>
+
+</body>
+</html>
