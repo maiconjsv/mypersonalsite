@@ -488,4 +488,7 @@ a:hover
     {
         min-height: 2150px;
     }    
+    .menu{
+        display: inline-flex;
+    }
 }
