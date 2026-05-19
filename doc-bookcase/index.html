@@ -131,41 +131,25 @@
 
 
 
+<script>
 
+    function menu()
+    {
+        var sidebar = document.querySelector('.sidebar')
 
+        sidebar.classList.toggle('active')
+    }
 
-
-
-
-
-
-
-    <script>
-
-        function menu() 
+    function esconderMenu()
+    {
+        if(window.innerWidth < 900)
         {
-            var conteudoSite = document.querySelector('.conteudo-site')
             var sidebar = document.querySelector('.sidebar')
 
-            sidebar.classList.toggle('active')
-            conteudoSite.classList.toggle('active')
+            sidebar.classList.remove('active')
         }
+    }
 
-        function esconderMenu()
-        {
-            var tamanhoTela = window.innerWidth;
-
-            if(tamanhoTela < "600")
-            {
-                var sidebar = document.querySelector('.sidebar')
-                var conteudoSite = document.querySelector('.conteudo-site')
-
-                sidebar.classList.remove('active')
-                conteudoSite.classList.remove('active')
-            }
-        }
-
-    </script>
-    
+</script>
 </body>
 </html>
