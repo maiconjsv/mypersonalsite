@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Módulo Estoque - BookCase</title>
+    <title>Estoque - BookCase</title>
 
     <link rel="shortcut icon" href="../img/favicon.ico" />
 
@@ -28,19 +28,13 @@
 
         <img src="../img/logo_bookcase_edited.png" class="logo" alt="Logo BookCase">
 
-        <div class="navegacao">
-            <ul>
-                <li><a href="../index.html">Voltar ao início</a></li>
-                <li><a href="#visao-geral" onclick="esconderMenu()">Visão geral</a></li>
-                <li><a href="#telas" onclick="esconderMenu()">Telas do módulo</a></li>
-                <li><a href="#cadastro-livros" onclick="esconderMenu()">Cadastro de livros</a></li>
-                <li><a href="#listar-livros" onclick="esconderMenu()">Listagem de livros</a></li>
-                <li><a href="#categorias" onclick="esconderMenu()">Categorias</a></li>
-                <li><a href="#produtos" onclick="esconderMenu()">Produtos</a></li>
-                <li><a href="#duvidas" onclick="esconderMenu()">Dúvidas comuns</a></li>
-            </ul>
-        </div>
-
+            <div class="navegacao">
+                <ul>
+                    <li><a href="#sobre" onclick="esconderMenu()">Sobre</a></li>
+                    <li><a href="../desenvolvimento.html" onclick="esconderMenu()">Solicitar desenvolvimento</a></li>
+                    <li><a href="../suporte.html" onclick="esconderMenu()">Suporte</a></li>
+                </ul>
+            </div>
     </div>
     <!-- Sidebar -->
 
@@ -51,7 +45,7 @@
             <img src="../img/menu.svg" alt="Menu">
         </a>
 
-        <h1>Módulo Estoque</h1>
+        <h1>Controle de estoque</h1>
 
         <hr class="linha-divisoria">
 
@@ -63,13 +57,12 @@
             <hr class="linha-divisoria">
 
             <p>
-                O módulo de estoque do BookCase foi desenvolvido para facilitar o controle de livros e produtos do sebo.
-                Nele é possível cadastrar itens, atualizar informações, consultar disponibilidade e acompanhar o acervo
-                de forma simples e organizada.
+                O controle de estoque no BookCase  foi desenvolvido de maneira que o controle de livros e produtos seja feito de maneira rápida, simples e intuitiva.
+                Nele é possível cadastrar itens, atualizar informações, consultar disponibilidade e acompanhar o acervo.
             </p>
 
             <p>
-                Esta página reúne manuais rápidos e explicações sobre cada tela disponível no módulo.
+                Esta página reune manuais rápidos e explicações sobre cada tela e funcionalidade disponivel.
             </p>
 
         </section>
@@ -77,7 +70,7 @@
         <!-- Lista principal -->
         <section id="telas">
 
-            <h2>TELAS DO MÓDULO</h2>
+            <h2>FUNCIONALIDADES</h2>
 
             <hr class="linha-divisoria">
 
@@ -90,28 +83,16 @@
                 <ul>
 
                     <li>
-                        <a href="#cadastro-livros">
-                            Cadastro de livros
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="#listar-livros">
-                            Listagem de livros
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="#categorias">
-                            Categorias
+                        <a href="#livros">
+                            Cadastro e controle de livros
                         </a>
                     </li>
 
                     <li>
                         <a href="#produtos">
-                            Cadastro de produtos
+                            Cadastro e controle de não livros
                         </a>
-                    </li>
+                    </li>                    
 
                     <li>
                         <a href="#duvidas">
@@ -126,29 +107,48 @@
         </section>
 
         <!-- Cadastro livros -->
-        <section id="cadastro-livros">
+        <section id="livros">
 
-            <h2>CADASTRO DE LIVROS</h2>
+            <h2>CADASTRO E MANIPULAÇÃO DE LIVROS</h2>
 
             <hr class="linha-divisoria">
-
+            <h3>Funções disponíveis:</h3>
             <p>
-                A tela de cadastro de livros permite adicionar novos itens ao estoque do sistema.
+                A maior parte do controle de livros será realizado na aba <i>Livros</i>.
             </p>
+            <img src="media/img1.0.png" alt="" class="imgs-docs">
 
             <h3>Funções disponíveis:</h3>
 
             <ul>
-                <li>Cadastro de título, autor e editora;</li>
-                <li>Definição de categoria;</li>
-                <li>Inserção de preço;</li>
-                <li>Controle de quantidade;</li>
-                <li>Registro de data de entrada.</li>
+                <li>Entrada de livos</li>
+                <li>Listar livros</li>
             </ul>
 
             <p>
-                Após salvar o livro, ele ficará disponível automaticamente na listagem de estoque.
+                A <i>entrada de livros</i> será onde a entrada de novos livros no estoque devem ser realizadas.
+                Os livros devem possuir os campos no formulário obrigatóriamente preenchidos, sendo a <i>prateleira</i>, o único que deve ser devidamente 
+                parametrizado anteriormente, o qual o passo a passo se encontra <a href="#">aqui</a>
             </p>
+
+            <img src="media/entrada_livros.png" alt="" class="imgs-docs" style="width: 38%;">
+
+            <p>
+                Na tela de <i>listagem de livros</i> é onde pode se realizar a busca por determinados livros, tanto para consulta de disponibilidade quanto para 
+                <b>edição</b> dos mesmos.
+            </p>
+
+            <p>
+                Os livros podem ser filtrados por 
+                <ul>
+                    <li>Sem estoque</li>
+                    <li>Título</li>
+                    <li>Autor</li>
+                    <li>Preço</li>
+                </ul>
+            </p>
+
+            <img src="media/listar_livros.png" alt="Listagem de livros" class="imgs-docs">
 
         </section>
 
@@ -237,7 +237,7 @@
         </section>
 
         <!-- Seta -->
-        <a href="#menu" class="seta-up">
+        <a href="#visao-geral" class="seta-up">
             <img src="../img/seta.png" alt="Voltar ao topo">
         </a>
 

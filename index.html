@@ -1,181 +1,763 @@
+```html
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Maicon Vieira</title>
-<link rel="stylesheet" href="src/css/index.css">
+
+<title>Maicon Vieira • Desenvolvedor de Software</title>
+
+<meta name="description"
+content="Portfólio de Maicon Vieira, desenvolvedor focado em sistemas web, software desktop, Flask, Python e soluções funcionais.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
 <link rel="shortcut icon" href="src/imgs/programming-code-signs.ico">
+
+<style>
+
+:root{
+    --dourado: #E68C3A;
+
+    --azul: #213E60;
+    --azul-escuro: #162c46;
+    --azul-profundo: #0e1d30;
+
+    --branco: #F4F2EF;
+
+    --texto-claro: #e9edf3;
+    --texto-secundario: #9ba9bb;
+
+    --borda: rgba(255,255,255,0.08);
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Inter', sans-serif;
+    background:var(--azul-profundo);
+    color:white;
+    overflow-x:hidden;
+}
+
+/* ========================= */
+
+.container{
+    width:100%;
+    max-width:1200px;
+    margin:auto;
+    padding:0 28px;
+}
+
+/* ========================= */
+
+header{
+    position:fixed;
+    width:100%;
+    top:0;
+    z-index:1000;
+
+    backdrop-filter:blur(18px);
+
+    background:rgba(14,29,48,0.7);
+
+    border-bottom:1px solid rgba(255,255,255,0.05);
+}
+
+.navbar{
+    height:80px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo{
+    font-size:1.7rem;
+    font-weight:800;
+    color:var(--dourado);
+}
+
+.nav-links{
+    display:flex;
+    gap:24px;
+}
+
+.nav-links a{
+    color:#d4deea;
+    text-decoration:none;
+    font-weight:500;
+    transition:.2s;
+}
+
+.nav-links a:hover{
+    color:white;
+}
+
+/* ========================= */
+
+.hero{
+    min-height:100vh;
+
+    display:flex;
+    align-items:center;
+
+    position:relative;
+    overflow:hidden;
+}
+
+.hero::before{
+    content:"";
+
+    position:absolute;
+
+    width:900px;
+    height:900px;
+
+    background:radial-gradient(circle, rgba(230,140,58,0.12), transparent 70%);
+
+    top:-300px;
+    right:-300px;
+}
+
+.hero::after{
+    content:"";
+
+    position:absolute;
+
+    width:700px;
+    height:700px;
+
+    background:radial-gradient(circle, rgba(33,62,96,0.7), transparent 70%);
+
+    bottom:-250px;
+    left:-200px;
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+
+    max-width:850px;
+}
+
+.hero small{
+    color:var(--dourado);
+
+    font-weight:700;
+    letter-spacing:2px;
+
+    font-size:.9rem;
+}
+
+.hero h1{
+    font-size:5rem;
+    line-height:1;
+
+    margin:20px 0 30px;
+
+    letter-spacing:-4px;
+}
+
+.hero p{
+    color:var(--texto-secundario);
+
+    font-size:1.2rem;
+    line-height:1.8;
+
+    max-width:700px;
+}
+
+.hero-buttons{
+    display:flex;
+    gap:18px;
+    flex-wrap:wrap;
+
+    margin-top:40px;
+}
+
+.btn-primary{
+    background:var(--dourado);
+    color:white;
+
+    text-decoration:none;
+
+    padding:18px 32px;
+
+    border-radius:16px;
+
+    font-weight:700;
+
+    transition:.2s;
+}
+
+.btn-primary:hover{
+    transform:translateY(-3px);
+    background:#cf7728;
+}
+
+.btn-secondary{
+    border:1px solid rgba(255,255,255,0.08);
+
+    color:white;
+
+    text-decoration:none;
+
+    padding:18px 32px;
+
+    border-radius:16px;
+
+    font-weight:600;
+
+    transition:.2s;
+}
+
+.btn-secondary:hover{
+    background:rgba(255,255,255,0.05);
+}
+
+/* ========================= */
+
+section{
+    padding:120px 0;
+}
+
+.section-title{
+    margin-bottom:60px;
+}
+
+.section-title h2{
+    font-size:3rem;
+    margin-bottom:16px;
+    letter-spacing:-2px;
+}
+
+.section-title p{
+    color:var(--texto-secundario);
+    max-width:700px;
+}
+
+/* ========================= */
+
+.projects-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:24px;
+}
+
+.project{
+    background:rgba(255,255,255,0.03);
+
+    border:1px solid rgba(255,255,255,0.06);
+
+    border-radius:28px;
+
+    padding:34px;
+
+    transition:.25s;
+}
+
+.project:hover{
+    transform:translateY(-6px);
+
+    border-color:rgba(230,140,58,0.25);
+
+    background:rgba(255,255,255,0.05);
+}
+
+.project-featured{
+    border:1px solid rgba(230,140,58,0.3);
+
+    background:linear-gradient(
+        145deg,
+        rgba(230,140,58,0.08),
+        rgba(255,255,255,0.03)
+    );
+}
+
+.project small{
+    display:inline-block;
+
+    color:var(--dourado);
+
+    margin-bottom:18px;
+
+    font-weight:700;
+    letter-spacing:1px;
+}
+
+.project h3{
+    font-size:1.6rem;
+    margin-bottom:16px;
+}
+
+.project p{
+    color:var(--texto-secundario);
+    line-height:1.8;
+    margin-bottom:24px;
+}
+
+.project ul{
+    list-style:none;
+
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+
+    margin-bottom:28px;
+}
+
+.project li{
+    background:rgba(255,255,255,0.06);
+
+    padding:8px 12px;
+
+    border-radius:10px;
+
+    font-size:.85rem;
+}
+
+.project-links{
+    display:flex;
+    gap:18px;
+    flex-wrap:wrap;
+}
+
+.project-links a{
+    color:#dbe5f1;
+    text-decoration:none;
+    font-weight:600;
+}
+
+.project-links a:hover{
+    color:var(--dourado);
+}
+
+/* ========================= */
+
+.about{
+    background:rgba(255,255,255,0.02);
+}
+
+.about-content{
+    max-width:850px;
+}
+
+.about p{
+    color:var(--texto-secundario);
+
+    line-height:1.9;
+
+    margin-bottom:24px;
+}
+
+.stacks{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+
+    list-style:none;
+
+    margin-top:30px;
+}
+
+.stacks li{
+    background:rgba(255,255,255,0.05);
+
+    border:1px solid rgba(255,255,255,0.05);
+
+    padding:10px 14px;
+
+    border-radius:12px;
+}
+
+/* ========================= */
+
+.social{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+
+    margin-top:40px;
+}
+
+.social a{
+    color:#d8e2ee;
+    text-decoration:none;
+
+    font-weight:600;
+}
+
+.social a:hover{
+    color:var(--dourado);
+}
+
+/* ========================= */
+
+footer{
+    border-top:1px solid rgba(255,255,255,0.05);
+
+    padding:40px 0;
+
+    text-align:center;
+}
+
+footer p{
+    color:#8090a3;
+}
+
+/* ========================= */
+
+@media(max-width:900px){
+
+    .hero h1{
+        font-size:3.5rem;
+    }
+
+    .section-title h2{
+        font-size:2.3rem;
+    }
+
+    .nav-links{
+        display:none;
+    }
+}
+
+</style>
+
 </head>
 
 <body>
 
-<section id="home">
-<div class="wrapper">
+<header>
 
-<h2>Olá, sou</h2>
-<h1>Maicon Vieira</h1>
+    <div class="container navbar">
 
-<p>
-Profissional de TI focado em soluções simples, funcionais e eficientes.
-</p>
+        <div class="logo">
+            Maicon Vieira
+        </div>
 
-<div class="buttons">
-<a href="#projects" class="btn">Projetos</a>
-<a href="#about" class="btn">Sobre</a>
-</div>
+        <div class="nav-links">
 
-</div>
+            <a href="#projects">
+                Projetos
+            </a>
+
+            <a href="#about">
+                Sobre
+            </a>
+
+            <a href="https://github.com/maiconjsv" target="_blank">
+                GitHub
+            </a>
+
+            <a href="https://www.linkedin.com/in/maiconjsv/" target="_blank">
+                LinkedIn
+            </a>
+
+        </div>
+
+    </div>
+
+</header>
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <div class="container">
+
+        <div class="hero-content">
+
+            <small>
+                DESENVOLVIMENTO DE SOFTWARE
+            </small>
+
+            <h1>
+                Soluções simples, funcionais e construídas para durar.
+            </h1>
+
+            <p>
+                Desenvolvedor focado em sistemas web, software desktop
+                e ferramentas voltadas para produtividade, automação
+                e gestão comercial utilizando Python, Flask, Delphi e SQL.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#projects" class="btn-primary">
+                    Ver projetos
+                </a>
+
+                <a href="#about" class="btn-secondary">
+                    Sobre mim
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
 </section>
+
+<!-- PROJETOS -->
 
 <section id="projects">
 
-<h2>Projetos</h2>
+    <div class="container">
 
-<div class="projects">
+        <div class="section-title">
 
-<div class="project">
-<h3>Maciel & Morais Advogados</h3>
+            <h2>
+                Projetos
+            </h2>
 
-<p>
-Landing page desenvolvida para captação de clientes com foco em SEO e integração ao WhatsApp.
-</p>
+            <p>
+                Alguns projetos desenvolvidos focando em performance,
+                simplicidade e experiência do usuário.
+            </p>
 
-<ul>
-<li>JavaScript</li>
-<li>HTML</li>
-<li>CSS</li>
-<li>Web</li>
-</ul>
+        </div>
 
-<a href="https://macielemoraisadvogados.com.br/" target="_blank">
-Ver projeto
-</a>
+        <div class="projects-grid">
 
-<small>Projeto freelance</small>
+            <!-- BOOKCASE -->
 
-</div>
+            <div class="project project-featured">
 
-<div class="project">
-<h3>BookCase</h3>
+                <small>
+                    PROJETO PRINCIPAL
+                </small>
 
-<p>
-    Sistema web de gerenciamento de sebos, com controle de usuários, vendas e estoque
-</p>
+                <h3>
+                    Bookcase
+                </h3>
 
-<ul>
-<li>Python</li>
-<li>Flask</li>
-<li>TypeScript</li>
-<li>Windows</li>
-<li>Linux</li>
-</ul>
+                <p>
+                    Sistema de gerenciamento para sebos com controle
+                    de estoque, movimentações financeiras e cadastro
+                    de livros e produtos.
+                </p>
 
-<a href="doc-bookcase/index.html" target="_blank">
-    Documentação
-</a>
+                <ul>
+                    <li>Python</li>
+                    <li>Flask</li>
+                    <li>TypeScript</li>
+                    <li>Windows</li>
+                    <li>Linux</li>
+                </ul>
 
-</div>
+                <div class="project-links">
 
+                    <a href="doc-bookcase/index.html" target="_blank">
+                        Documentação
+                    </a>
 
-<div class="project">
-<h3>Wstaion</h3>
+                </div>
 
-<p>
-Sistema CLI para produtividade diária inspirado no curso CS50.
-</p>
+            </div>
 
-<ul>
-<li>C</li>
-<li>Windows</li>
-<li>Linux</li>
-</ul>
+            <!-- PROJETO -->
 
-<a href="https://github.com/maiconjsv/wstaion" target="_blank">
-Repositório
-</a>
+            <div class="project">
 
-<small>Projeto pessoal</small>
+                <small>
+                    FREELANCE
+                </small>
 
-</div>
+                <h3>
+                    Maciel & Morais Advogados
+                </h3>
 
-<div class="project">
-<h3>Sistema de controle de pátio</h3>
+                <p>
+                    Landing page desenvolvida com foco em SEO,
+                    captação de clientes e integração ao WhatsApp.
+                </p>
 
-<p>
-Sistema web para gerenciamento de veículos em pátio.
-</p>
+                <ul>
+                    <li>JavaScript</li>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>SEO</li>
+                </ul>
 
-<ul>
-<li>JavaScript</li>
-<li>Firebase</li>
-<li>Web</li>
-</ul>
+                <div class="project-links">
 
-<a href="https://github.com/maiconjsv/Sistema-para-Higienizador-de-frota" target="_blank">
-Repositório
-</a>
+                    <a href="https://macielemoraisadvogados.com.br/" target="_blank">
+                        Ver projeto
+                    </a>
 
-</div>
+                </div>
 
-</div>
+            </div>
+
+            <!-- PROJETO -->
+
+            <div class="project">
+
+                <small>
+                    PROJETO PESSOAL
+                </small>
+
+                <h3>
+                    Wstaion
+                </h3>
+
+                <p>
+                    Sistema CLI para produtividade diária inspirado
+                    no curso CS50.
+                </p>
+
+                <ul>
+                    <li>C</li>
+                    <li>Windows</li>
+                    <li>Linux</li>
+                </ul>
+
+                <div class="project-links">
+
+                    <a href="https://github.com/maiconjsv/wstaion" target="_blank">
+                        Repositório
+                    </a>
+
+                </div>
+
+            </div>
+
+            <!-- PROJETO -->
+
+            <div class="project">
+
+                <small>
+                    SISTEMA WEB
+                </small>
+
+                <h3>
+                    Controle de pátio
+                </h3>
+
+                <p>
+                    Sistema web para gerenciamento e organização
+                    de veículos em pátio.
+                </p>
+
+                <ul>
+                    <li>JavaScript</li>
+                    <li>Firebase</li>
+                    <li>Web</li>
+                </ul>
+
+                <div class="project-links">
+
+                    <a href="https://github.com/maiconjsv/Sistema-para-Higienizador-de-frota" target="_blank">
+                        Repositório
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
 
 </section>
 
-<section id="about">
+<!-- SOBRE -->
 
-<h2>Sobre</h2>
-<p>
-Profissional de ti com experiência prática em manutenção de sistemas legados e desenvolvimento web.
-Atualmente atuo com Delphi, PHP e SQL no dia a dia e desenvolvo projetos próprios em C e Python. Meu maior projeto atualmente em desenvolvimento é 
-um sistema para gerenciamento de sebos, disponivel no meu Github. Também estou aprendendo Node.js e React
-</p>
+<section class="about" id="about">
 
-<h3>Acadêmico</h3>
-<p>
-Análise e desenvolvimento de sistemas - <b>Anhanguera</b> <br>
-Status: Cursando
-</p>
+    <div class="container">
 
-<h3>Stacks</h3>
+        <div class="about-content">
 
-<ul class="stacks">
+            <div class="section-title">
 
-<li>JavaScript</li>
-<li>HTML</li>
-<li>CSS</li>
-<li>Python</li>
-<li>C</li>
-<li>MySQL</li>
-<li>SQLite</li>
-<li>Firebase</li>
-<li>Flask</li>
-<li>Oracle Database</li>
-</ul>
+                <h2>
+                    Sobre
+                </h2>
 
-<div class="social">
+            </div>
 
-<a href="https://www.linkedin.com/in/maiconjsv/" target="_blank">
-LinkedIn
-</a>
+            <p>
+                Desenvolvedor focado em sistemas web e automações,
+                com experiência prática em manutenção de sistemas
+                legados Delphi e desenvolvimento de soluções modernas utilizando
+                Python, Flask e SQL.
+            </p>
 
-<a href="https://github.com/maiconjsv" target="_blank">
-GitHub
-</a>
+            <p>
+                Atualmente desenvolvo projetos próprios voltados
+                para gestão comercial, produtividade e software
+                independente, com foco em aplicações leves,
+                funcionais e de longo prazo.
+            </p>
 
-<a href="src/downloads/MaiconJuniorsv (1).pdf" download="curriculum.pdf">Curriculum</a>
+            <h3>
+                Stack principal
+            </h3>
 
-</div>
+            <ul class="stacks">
+
+                <li>Python</li>
+                <li>Flask</li>
+                <li>Delphi</li>
+                <li>SQL</li>
+                <li>JavaScript</li>
+                <li>TypeScript</li>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>SQLite</li>
+                <li>MySQL</li>
+                <li>Oracle Database</li>
+
+            </ul>
+
+            <div class="social">
+
+                <a href="https://github.com/maiconjsv" target="_blank">
+                    GitHub
+                </a>
+
+                <a href="https://www.linkedin.com/in/maiconjsv/" target="_blank">
+                    LinkedIn
+                </a>
+
+                <a href="src/downloads/MaiconJuniorsv (1).pdf" download="curriculum.pdf">
+                    Currículo
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
 
 </section>
 
 <footer>
 
-<p>
-Maicon Vieira 2026
-</p>
+    <div class="container">
+
+        <p>
+            © 2026 Maicon Vieira
+        </p>
+
+    </div>
 
 </footer>
 
 </body>
 </html>
+```
