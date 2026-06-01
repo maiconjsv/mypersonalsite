@@ -417,6 +417,42 @@ footer p{
 }
 
 /* ========================= */
+/* LIVRO */
+/* ========================= */
+
+.chronicles{
+    background:linear-gradient(
+        180deg,
+        rgba(230,140,58,0.03),
+        transparent
+    );
+}
+
+.book-card{
+    background:rgba(255,255,255,0.03);
+    border:1px solid rgba(230,140,58,0.18);
+    border-radius:28px;
+    padding:40px;
+    max-width:900px;
+}
+
+.book-card small{
+    color:var(--dourado);
+    font-weight:700;
+    letter-spacing:1px;
+}
+
+.book-card h3{
+    margin:16px 0;
+    font-size:2rem;
+}
+
+.book-card p{
+    color:var(--texto-secundario);
+    line-height:1.9;
+}
+
+/* ========================= */
 
 @media(max-width:900px){
 
@@ -457,6 +493,10 @@ footer p{
                 Sobre
             </a>
 
+            <a href="#chronicles">
+                Livro
+            </a>
+
             <a href="https://github.com/maiconjsv" target="_blank">
                 GitHub
             </a>
@@ -480,17 +520,20 @@ footer p{
         <div class="hero-content">
 
             <small>
-                DESENVOLVIMENTO DE SOFTWARE
+                DESENVOLVIMENTO, ESCRITA E PROJETOS INDEPENDENTES
             </small>
 
             <h1>
-                Soluções simples, funcionais e construídas para durar.
+                Eu construo software, escrevo histórias e transformo ideias em produtos.
             </h1>
 
             <p>
-                Desenvolvedor focado em sistemas web, software desktop
-                e ferramentas voltadas para produtividade, automação
-                e gestão comercial utilizando Python, Flask, JavaScript e SQL.
+                Desenvolvedor de software focado em sistemas web,
+                automações e aplicações desktop.
+
+                Paralelamente escrevo fantasia sombria,
+                desenvolvo projetos independentes
+                e construo universos ficcionais.
             </p>
 
             <div class="hero-buttons">
@@ -499,8 +542,60 @@ footer p{
                     Ver projetos
                 </a>
 
+                <a href="#chronicles" class="btn-secondary">
+                    Conhecer o livro
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section id="chronicles" class="chronicles">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>
+                As Crônicas do Castelo Alto
+            </h2>
+
+            <p>
+                Um romance de fantasia sombria em desenvolvimento.
+            </p>
+
+        </div>
+
+        <div class="book-card">
+
+            <small>
+                PROJETO LITERÁRIO
+            </small>
+
+            <h3>
+                As Crônicas do Castelo Alto
+            </h3>
+
+            <p>
+                Em um mundo marcado por reinos decadentes, guerras antigas e forças esquecidas,
+                homens comuns lutam para sobreviver enquanto algo muito mais antigo paira no ar.
+
+                Acompanhe artes conceituais, histórias curtas, bastidores da escrita e novidades
+                sobre o desenvolvimento do livro.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="cronicas/index.html" class="btn-primary">
+                    Página do projeto
+                </a>
+
                 <a href="#about" class="btn-secondary">
-                    Sobre mim
+                    Sobre o autor
                 </a>
 
             </div>
@@ -751,7 +846,7 @@ footer p{
     <div class="container">
 
         <p>
-            © 2026 Maicon Vieira
+            © 2026 Maicon Vieira • Desenvolvedor, escritor e criador de projetos independentes.
         </p>
 
     </div>
@@ -760,4 +855,3 @@ footer p{
 
 </body>
 </html>
-```
