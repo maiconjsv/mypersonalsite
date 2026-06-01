@@ -3,374 +3,355 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>As Crônicas do Castelo Alto</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
-
 :root{
-    --bg:#0e1d30;
-    --card:#13253c;
-    --gold:#E68C3A;
-    --text:#f4f2ef;
-    --muted:#9ba9bb;
+ --bg:#0b0908;
+ --panel:#15120f;
+ --panel2:#1d1814;
+ --gold:#c69a4b;
+ --text:#e7dfd0;
+ --muted:#a79d8d;
+ --border:#3b3126;
 }
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
+*{margin:0;padding:0;box-sizing:border-box}
 
 body{
-    font-family:'Inter',sans-serif;
-    background:var(--bg);
-    color:var(--text);
+ background:linear-gradient(180deg,#090807,#0f0d0b);
+ color:var(--text);
+ font-family:Inter,sans-serif;
 }
 
 .container{
-    max-width:1200px;
-    margin:auto;
-    padding:0 24px;
+ max-width:1200px;
+ margin:auto;
+ padding:0 24px;
 }
 
-section{
-    padding:100px 0;
+section{padding:100px 0;}
+
+h1,h2,h3{
+ font-family:Cinzel,serif;
 }
 
 .hero{
-    min-height:100vh;
-    display:flex;
-    align-items:center;
-    position:relative;
-    overflow:hidden;
+ min-height:100vh;
+ display:flex;
+ align-items:center;
+ text-align:center;
+ position:relative;
 }
 
-.hero::before{
-    content:"";
-    position:absolute;
-    width:900px;
-    height:900px;
-    top:-300px;
-    right:-300px;
-
-    background:
-    radial-gradient(
-        circle,
-        rgba(230,140,58,.15),
-        transparent 70%
-    );
+.hero:before{
+ content:"";
+ position:absolute;
+ inset:0;
+ background:
+ radial-gradient(circle at top, rgba(198,154,75,.18), transparent 40%);
 }
 
 .hero-content{
-    max-width:900px;
-    position:relative;
-    z-index:2;
+ position:relative;
+ z-index:2;
+ max-width:900px;
+ margin:auto;
+}
+
+.crest{
+ font-size:5rem;
+ margin-bottom:20px;
 }
 
 .hero small{
-    color:var(--gold);
-    font-weight:700;
-    letter-spacing:2px;
+ color:var(--gold);
+ letter-spacing:3px;
 }
 
 .hero h1{
-    font-size:5rem;
-    margin:24px 0;
-    line-height:1;
+ font-size:4.8rem;
+ margin:20px 0;
 }
 
 .hero p{
-    color:var(--muted);
-    line-height:1.9;
-    font-size:1.15rem;
-}
-
-.section-title{
-    margin-bottom:50px;
-}
-
-.section-title h2{
-    font-size:3rem;
-    margin-bottom:12px;
-}
-
-.section-title p{
-    color:var(--muted);
+ color:var(--muted);
+ line-height:1.9;
+ font-size:1.1rem;
 }
 
 .card{
-    background:var(--card);
-    padding:40px;
-    border-radius:24px;
+ background:var(--panel);
+ border:1px solid var(--border);
+ border-radius:18px;
+ padding:32px;
+}
+
+.title{
+ margin-bottom:40px;
+}
+
+.title h2{
+ font-size:2.5rem;
+ margin-bottom:10px;
+}
+
+.title p{
+ color:var(--muted);
+}
+
+.timeline{
+ display:grid;
+ gap:20px;
+}
+
+.timeline-item{
+ border-left:3px solid var(--gold);
+ padding-left:20px;
 }
 
 .contos{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-    gap:24px;
+ display:grid;
+ grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+ gap:20px;
 }
 
 .conto{
-    background:var(--card);
-    padding:30px;
-    border-radius:24px;
-}
-
-.conto h3{
-    margin-bottom:12px;
-}
-
-.conto p{
-    color:var(--muted);
+ background:var(--panel2);
+ border:1px solid var(--border);
+ border-radius:14px;
+ padding:24px;
 }
 
 .artes{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-    gap:24px;
+ display:grid;
+ grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+ gap:20px;
 }
 
 .placeholder{
-    height:350px;
-
-    border:2px dashed rgba(255,255,255,.1);
-
-    border-radius:24px;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    color:var(--muted);
+ height:320px;
+ border:2px dashed var(--border);
+ border-radius:14px;
+ display:flex;
+ align-items:center;
+ justify-content:center;
+ color:var(--muted);
 }
 
 .mapa{
-    height:600px;
-
-    border:2px dashed rgba(230,140,58,.25);
-
-    border-radius:24px;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    text-align:center;
-
-    color:var(--muted);
+ height:600px;
+ border:2px dashed var(--gold);
+ border-radius:16px;
+ display:flex;
+ align-items:center;
+ justify-content:center;
+ text-align:center;
+ padding:30px;
+ color:var(--muted);
 }
 
 .newsletter{
-    text-align:center;
+ text-align:center;
 }
 
-.newsletter p{
-    color:var(--muted);
-    max-width:700px;
-    margin:auto;
+.input{
+ max-width:500px;
+ margin:30px auto 0;
+ display:flex;
+ gap:10px;
+}
+
+.input input{
+ flex:1;
+ padding:14px;
+ background:#0d0c0a;
+ border:1px solid var(--border);
+ color:white;
+ border-radius:10px;
+}
+
+.input button{
+ padding:14px 20px;
+ border:none;
+ background:var(--gold);
+ border-radius:10px;
+ cursor:pointer;
+}
+
+footer{
+ padding:40px;
+ text-align:center;
+ color:var(--muted);
+ border-top:1px solid var(--border);
 }
 
 @media(max-width:900px){
-
-    .hero h1{
-        font-size:3rem;
-    }
-
-    .mapa{
-        height:350px;
-    }
+ .hero h1{font-size:3rem;}
+ .mapa{height:350px;}
+ .input{flex-direction:column;}
 }
-
 </style>
 </head>
-
 <body>
 
 <section class="hero">
-
 <div class="container">
-
 <div class="hero-content">
 
-<small>
-ROMANCE DE FANTASIA SOMBRIA
-</small>
+<div class="crest">⚔</div>
 
-<h1>
-As Crônicas do Castelo Alto
-</h1>
+<small>ROMANCE DE FANTASIA SOMBRIA</small>
+
+<h1>As Crônicas do Castelo Alto</h1>
 
 <p>
-Em uma terra marcada por guerras antigas,
-reinos decadentes e promessas esquecidas,
-a sobrevivência exige mais do que coragem.
-
-Enquanto nobres disputam poder e exércitos
-marcham rumo ao conflito, forças muito mais
-antigas observam nas sombras.
+    Em um mundo moldado por eventos colossais que amaldiçoaram a humanidade com a imortalidade, criando guerras infinitas que riscaram os grandes reinos do mapa, um homem sem memória, uma sobrevivente nortenha e 
+    um soldado buscam por respostas onde apenas existe decadência e esquecimento.
 </p>
 
 </div>
-
 </div>
-
 </section>
 
 <section>
-
 <div class="container">
-
-<div class="section-title">
-
-<h2>Status do Projeto</h2>
-
-<p>
-Previsão de lançamento entre 2028 e 2029.
-Durante o desenvolvimento serão publicados
-contos, artes conceituais e materiais extras
-do universo.
-</p>
-
+<div class="title">
+<h2>Estado do Projeto</h2>
+<p>Previsão de lançamento entre 2028 e 2029.</p>
 </div>
 
 <div class="card">
-
 <p>
-Projeto em desenvolvimento ativo.
-Esta página servirá como portal oficial
-do universo de As Crônicas do Castelo Alto.
+O universo está em desenvolvimento ativo. Até o lançamento serão publicados contos,
+artes conceituais, registros históricos e materiais extras sobre o mundo.
 </p>
-
 </div>
-
 </div>
-
 </section>
 
 <section>
-
 <div class="container">
 
-<div class="section-title">
-
-<h2>Contos do Universo</h2>
-
-<p>
-Histórias paralelas e relatos do mundo.
-</p>
-
+<div class="title">
+<h2>Crônicas e Contos</h2>
+<p>Histórias paralelas do universo.</p>
 </div>
 
 <div class="contos">
 
 <div class="conto">
-<h3>Título do Conto</h3>
-<p>Descrição curta do conto.</p>
+<h3>Conto I</h3>
+<p>Descrição do conto.</p>
 </div>
 
 <div class="conto">
-<h3>Título do Conto</h3>
-<p>Descrição curta do conto.</p>
+<h3>Conto II</h3>
+<p>Descrição do conto.</p>
 </div>
 
 <div class="conto">
-<h3>Título do Conto</h3>
-<p>Descrição curta do conto.</p>
+<h3>Conto III</h3>
+<p>Descrição do conto.</p>
 </div>
 
 </div>
 
 </div>
-
 </section>
 
 <section>
-
 <div class="container">
 
-<div class="section-title">
+<div class="title">
+<h2>Linha do Tempo</h2>
+</div>
 
+<div class="timeline">
+
+<div class="timeline-item">
+<h3>Ano 0</h3>
+<p>A Grande Ruptura.</p>
+</div>
+
+<div class="timeline-item">
+<h3>Ano 143</h3>
+<p>Evento histórico placeholder.</p>
+</div>
+
+<div class="timeline-item">
+<h3>Ano 217</h3>
+<p>Início da história principal.</p>
+</div>
+
+</div>
+
+</div>
+</section>
+
+<section>
+<div class="container">
+
+<div class="title">
 <h2>Artes Conceituais</h2>
-
+<p>Locais, personagens e facções.</p>
 </div>
 
 <div class="artes">
 
-<div class="placeholder">
-Arte 01
-</div>
-
-<div class="placeholder">
-Arte 02
-</div>
-
-<div class="placeholder">
-Arte 03
-</div>
+<div class="placeholder">Vila Costa da Colina</div>
+<div class="placeholder">Cidade Boriaste</div>
+<div class="placeholder">Personagem Principal</div>
 
 </div>
 
 </div>
-
 </section>
 
 <section>
-
 <div class="container">
 
-<div class="section-title">
-
+<div class="title">
 <h2>Mapa do Mundo</h2>
-
-<p>
-Versão interativa em desenvolvimento.
-</p>
-
+<p>Mapa interativo planejado para o futuro.</p>
 </div>
 
 <div class="mapa">
-
 <div>
-
-<h3>Mapa Interativo Futuro</h3>
-
+<h3>Mapa Interativo</h3>
 <br>
-
 <p>
-Regiões, cidades, personagens,
-facções e eventos históricos.
+Aqui será exibido um mapa clicável com regiões, cidades,
+facções, personagens e eventos históricos.
 </p>
-
+</div>
 </div>
 
 </div>
-
-</div>
-
 </section>
 
 <section class="newsletter">
-
 <div class="container">
 
-<div class="section-title">
-
+<div class="title">
 <h2>Acompanhe o Desenvolvimento</h2>
+<p>Receba novos contos, artes e atualizações do projeto.</p>
+</div>
 
-<p>
-Em breve cadastro para receber novos contos,
-artes conceituais e atualizações do livro.
-</p>
-
+<div class="input">
+<input type="email" placeholder="Seu e-mail">
+<button>Inscrever-se</button>
 </div>
 
 </div>
-
 </section>
+
+<footer>
+As Crônicas do Castelo Alto • Universo em Desenvolvimento
+</footer>
 
 </body>
 </html>
