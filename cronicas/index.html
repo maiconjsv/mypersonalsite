@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>As Crônicas do Castelo Alto</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+    --bg:#0e1d30;
+    --card:#13253c;
+    --gold:#E68C3A;
+    --text:#f4f2ef;
+    --muted:#9ba9bb;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Inter',sans-serif;
+    background:var(--bg);
+    color:var(--text);
+}
+
+.container{
+    max-width:1200px;
+    margin:auto;
+    padding:0 24px;
+}
+
+section{
+    padding:100px 0;
+}
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    position:relative;
+    overflow:hidden;
+}
+
+.hero::before{
+    content:"";
+    position:absolute;
+    width:900px;
+    height:900px;
+    top:-300px;
+    right:-300px;
+
+    background:
+    radial-gradient(
+        circle,
+        rgba(230,140,58,.15),
+        transparent 70%
+    );
+}
+
+.hero-content{
+    max-width:900px;
+    position:relative;
+    z-index:2;
+}
+
+.hero small{
+    color:var(--gold);
+    font-weight:700;
+    letter-spacing:2px;
+}
+
+.hero h1{
+    font-size:5rem;
+    margin:24px 0;
+    line-height:1;
+}
+
+.hero p{
+    color:var(--muted);
+    line-height:1.9;
+    font-size:1.15rem;
+}
+
+.section-title{
+    margin-bottom:50px;
+}
+
+.section-title h2{
+    font-size:3rem;
+    margin-bottom:12px;
+}
+
+.section-title p{
+    color:var(--muted);
+}
+
+.card{
+    background:var(--card);
+    padding:40px;
+    border-radius:24px;
+}
+
+.contos{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:24px;
+}
+
+.conto{
+    background:var(--card);
+    padding:30px;
+    border-radius:24px;
+}
+
+.conto h3{
+    margin-bottom:12px;
+}
+
+.conto p{
+    color:var(--muted);
+}
+
+.artes{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:24px;
+}
+
+.placeholder{
+    height:350px;
+
+    border:2px dashed rgba(255,255,255,.1);
+
+    border-radius:24px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    color:var(--muted);
+}
+
+.mapa{
+    height:600px;
+
+    border:2px dashed rgba(230,140,58,.25);
+
+    border-radius:24px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    text-align:center;
+
+    color:var(--muted);
+}
+
+.newsletter{
+    text-align:center;
+}
+
+.newsletter p{
+    color:var(--muted);
+    max-width:700px;
+    margin:auto;
+}
+
+@media(max-width:900px){
+
+    .hero h1{
+        font-size:3rem;
+    }
+
+    .mapa{
+        height:350px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<section class="hero">
+
+<div class="container">
+
+<div class="hero-content">
+
+<small>
+ROMANCE DE FANTASIA SOMBRIA
+</small>
+
+<h1>
+As Crônicas do Castelo Alto
+</h1>
+
+<p>
+Em uma terra marcada por guerras antigas,
+reinos decadentes e promessas esquecidas,
+a sobrevivência exige mais do que coragem.
+
+Enquanto nobres disputam poder e exércitos
+marcham rumo ao conflito, forças muito mais
+antigas observam nas sombras.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>Status do Projeto</h2>
+
+<p>
+Previsão de lançamento entre 2028 e 2029.
+Durante o desenvolvimento serão publicados
+contos, artes conceituais e materiais extras
+do universo.
+</p>
+
+</div>
+
+<div class="card">
+
+<p>
+Projeto em desenvolvimento ativo.
+Esta página servirá como portal oficial
+do universo de As Crônicas do Castelo Alto.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>Contos do Universo</h2>
+
+<p>
+Histórias paralelas e relatos do mundo.
+</p>
+
+</div>
+
+<div class="contos">
+
+<div class="conto">
+<h3>Título do Conto</h3>
+<p>Descrição curta do conto.</p>
+</div>
+
+<div class="conto">
+<h3>Título do Conto</h3>
+<p>Descrição curta do conto.</p>
+</div>
+
+<div class="conto">
+<h3>Título do Conto</h3>
+<p>Descrição curta do conto.</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>Artes Conceituais</h2>
+
+</div>
+
+<div class="artes">
+
+<div class="placeholder">
+Arte 01
+</div>
+
+<div class="placeholder">
+Arte 02
+</div>
+
+<div class="placeholder">
+Arte 03
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>Mapa do Mundo</h2>
+
+<p>
+Versão interativa em desenvolvimento.
+</p>
+
+</div>
+
+<div class="mapa">
+
+<div>
+
+<h3>Mapa Interativo Futuro</h3>
+
+<br>
+
+<p>
+Regiões, cidades, personagens,
+facções e eventos históricos.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="newsletter">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>Acompanhe o Desenvolvimento</h2>
+
+<p>
+Em breve cadastro para receber novos contos,
+artes conceituais e atualizações do livro.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+</body>
+</html>

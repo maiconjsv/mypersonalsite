@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Estoque - BookCase</title>
+
+    <link rel="shortcut icon" href="../img/favicon.ico" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../estilo.css">
+
+</head>
+<body>
+
+<div class="container">
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+
+        <img src="../img/logo_bookcase_edited.png" class="logo" alt="Logo BookCase">
+
+            <div class="navegacao">
+                <ul>
+                    <li><a href="#sobre" onclick="esconderMenu()">Sobre</a></li>
+                    <li><a href="../desenvolvimento.html" onclick="esconderMenu()">Solicitar desenvolvimento</a></li>
+                    <li><a href="../suporte.html" onclick="esconderMenu()">Suporte</a></li>
+                </ul>
+            </div>
+    </div>
+    <!-- Sidebar -->
+
+    <!-- Conteúdo -->
+    <div class="conteudo-site">
+
+        <a href="#" class="menu" onclick="menu()" id="menu">
+            <img src="../img/menu.svg" alt="Menu">
+        </a>
+
+        <h1>Controle de estoque</h1>
+
+        <hr class="linha-divisoria">
+
+        <!-- Visão Geral -->
+        <section id="visao-geral">
+
+            <h2>VISÃO GERAL</h2>
+
+            <hr class="linha-divisoria">
+
+            <p>
+                O controle de estoque no BookCase  foi desenvolvido de maneira que o controle de livros e produtos seja feito de maneira rápida, simples e intuitiva.
+                Nele é possível cadastrar itens, atualizar informações, consultar disponibilidade e acompanhar o acervo.
+            </p>
+
+            <p>
+                Esta página reune manuais rápidos e explicações sobre cada tela e funcionalidade disponivel.
+            </p>
+
+        </section>
+
+        <!-- Lista principal -->
+        <section id="telas">
+
+            <h2>FUNCIONALIDADES</h2>
+
+            <hr class="linha-divisoria">
+
+            <p>
+                Utilize a lista abaixo para acessar rapidamente a documentação de cada tela do sistema.
+            </p>
+
+            <div class="paginas">
+
+                <ul>
+
+                    <li>
+                        <a href="#livros">
+                            Cadastro e controle de livros
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#produtos">
+                            Cadastro e controle de não livros
+                        </a>
+                    </li>                    
+
+                    <li>
+                        <a href="#duvidas">
+                            Dúvidas comuns
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </section>
+
+        <!-- Cadastro livros -->
+        <section id="livros">
+
+            <h2>CADASTRO E MANIPULAÇÃO DE LIVROS</h2>
+
+            <hr class="linha-divisoria">
+            <h3>Funções disponíveis:</h3>
+            <p>
+                A maior parte do controle de livros será realizado na aba <i>Livros</i>.
+            </p>
+            <img src="media/img1.0.png" alt="" class="imgs-docs">
+
+            <h3>Funções disponíveis:</h3>
+
+            <ul>
+                <li>Entrada de livos</li>
+                <li>Listar livros</li>
+            </ul>
+
+            <p>
+                A <i>entrada de livros</i> será onde a entrada de novos livros no estoque devem ser realizadas.
+                Os livros devem possuir os campos no formulário obrigatóriamente preenchidos, sendo a <i>prateleira</i>, o único que deve ser devidamente 
+                parametrizado anteriormente, o qual o passo a passo se encontra <a href="#">aqui</a>
+            </p>
+
+            <img src="media/entrada_livros.png" alt="" class="imgs-docs" style="width: 38%;">
+
+            <p>
+                Na tela de <i>listagem de livros</i> é onde pode se realizar a busca por determinados livros, tanto para consulta de disponibilidade quanto para 
+                <b>edição</b> dos mesmos.
+            </p>
+
+            <p>
+                Os livros podem ser filtrados por 
+                <ul>
+                    <li>Sem estoque</li>
+                    <li>Título</li>
+                    <li>Autor</li>
+                    <li>Preço</li>
+                </ul>
+            </p>
+
+            <img src="media/listar_livros.png" alt="Listagem de livros" class="imgs-docs">
+
+        </section>
+
+        <!-- Listagem -->
+        <section id="listar-livros">
+
+            <h2>LISTAGEM DE LIVROS</h2>
+
+            <hr class="linha-divisoria">
+
+            <p>
+                A listagem de livros mostra todos os itens cadastrados no sistema.
+            </p>
+
+            <h3>Nesta tela você pode:</h3>
+
+            <ul>
+                <li>Pesquisar livros;</li>
+                <li>Consultar disponibilidade;</li>
+                <li>Editar informações;</li>
+                <li>Visualizar preços;</li>
+                <li>Controlar entradas e saídas.</li>
+            </ul>
+
+        </section>
+
+        <!-- Categorias -->
+        <section id="categorias">
+
+            <h2>CATEGORIAS</h2>
+
+            <hr class="linha-divisoria">
+
+            <p>
+                O sistema permite organizar os livros utilizando categorias personalizadas.
+            </p>
+
+            <p>
+                Isso facilita pesquisas, organização interna e localização rápida de itens no estoque.
+            </p>
+
+        </section>
+
+        <!-- Produtos -->
+        <section id="produtos">
+
+            <h2>CADASTRO DE PRODUTOS</h2>
+
+            <hr class="linha-divisoria">
+
+            <p>
+                Além de livros, o BookCase também permite cadastrar outros produtos vendidos pelo sebo.
+            </p>
+
+            <h3>Exemplos:</h3>
+
+            <ul>
+                <li>Marcadores;</li>
+                <li>Quadrinhos;</li>
+                <li>Mangás;</li>
+                <li>Itens colecionáveis;</li>
+                <li>Revistas.</li>
+            </ul>
+
+        </section>
+
+        <!-- Dúvidas -->
+        <section id="duvidas">
+
+            <h2>DÚVIDAS COMUNS</h2>
+
+            <hr class="linha-divisoria">
+
+            <h3>O livro desapareceu da listagem. O que fazer?</h3>
+
+            <p>
+                Verifique se o item foi marcado como indisponível ou removido do estoque.
+            </p>
+
+            <h3>Posso editar um livro já cadastrado?</h3>
+
+            <p>
+                Sim. Basta acessar a listagem de livros e selecionar a opção de edição.
+            </p>
+
+        </section>
+
+        <!-- Seta -->
+        <a href="#visao-geral" class="seta-up">
+            <img src="../img/seta.png" alt="Voltar ao topo">
+        </a>
+
+    </div>
+    <!-- Conteúdo -->
+
+</div>
+
+<script>
+
+    function menu()
+    {
+        var sidebar = document.querySelector('.sidebar')
+
+        sidebar.classList.toggle('active')
+    }
+
+    function esconderMenu()
+    {
+        if(window.innerWidth < 900)
+        {
+            var sidebar = document.querySelector('.sidebar')
+
+            sidebar.classList.remove('active')
+        }
+    }
+
+</script>
+</body>
+</html>

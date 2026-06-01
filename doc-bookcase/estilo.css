@@ -1,0 +1,494 @@
+:root{
+    --dourado: #E68C3A;
+    --azul: #213E60;
+    --cinza: #D8D1BD;
+    --branco: #F4F2EF;
+
+    --cor-fundo: var(--branco);
+    --cor-fundo-secundario: #ebe7de;
+
+    --cor-card: #ffffff;
+    --cor-card-secundaria: #f3f0e8;
+
+    --cor-borda: #c8c0ac;
+
+    --cor-primaria: var(--dourado);
+    --cor-primaria-hover: #c97327;
+
+    --cor-link: var(--azul);
+
+    --cor-texto: var(--azul);
+    --cor-texto-secundario: #4b5f77;
+    --cor-texto-fraco: #7d7d7d;
+
+    --cor-texto-conteudo: #3f3f3f;
+
+    --cor-codigo: var(--azul);
+    --cor-codigo-texto: var(--branco);
+
+    --cor-sidebar: var(--azul);
+}
+
+/* Geral */
+
+*
+{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html
+{
+    scroll-behavior: smooth;
+}
+
+body
+{
+    background: var(--cor-fundo);
+    color: var(--cor-texto);
+
+    font-family: 'Roboto', sans-serif;
+}
+
+:target
+{
+    scroll-margin-top: 1em;
+}
+
+.container
+{
+    width: 100%;
+    display: flex;
+}
+
+/* Código */
+
+.codigo-marcado
+{
+    width: 100%;
+
+    margin-top: 15px;
+    margin-bottom: 25px;
+
+    padding: 18px;
+
+    background: var(--cor-codigo);
+    color: var(--cor-codigo-texto);
+
+    border-radius: 12px;
+    border-left: 8px solid var(--cor-primaria);
+
+    font-size: 16px;
+    line-height: 1.7;
+
+    overflow-x: auto;
+}
+
+/* Botão subir */
+
+.seta-up
+{
+    width: 50px;
+    height: 50px;
+
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: var(--cor-primaria);
+
+    border-radius: 12px;
+
+    transition: 0.2s;
+
+    z-index: 999;
+}
+
+.seta-up:hover
+{
+    background: var(--cor-primaria-hover);
+}
+
+.seta-up img
+{
+    width: 24px;
+}
+
+/* Sidebar */
+
+/* Desktop */
+
+.sidebar
+{
+    width: 270px;
+
+    position: fixed;
+    left: 0;
+    top: 0;
+
+    height: 100vh;
+
+    background: var(--cor-sidebar);
+
+    text-align: center;
+
+    overflow-y: auto;
+
+    transition: 0.4s;
+
+    box-shadow: 2px 0px 12px rgba(0,0,0,0.08);
+
+    z-index: 999;
+}
+
+.logo
+{
+    width: 220px;
+
+    margin-top: 25px;
+}
+
+.navegacao
+{
+    width: 100%;
+
+    padding: 30px 25px 40px 25px;
+}
+
+.navegacao ul
+{
+    list-style: none;
+}
+
+.navegacao ul li
+{
+    margin-bottom: 10px;
+}
+
+.navegacao ul li a
+{
+    display: block;
+
+    text-decoration: none;
+
+    color: var(--branco);
+
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+
+    padding: 10px 14px;
+
+    border-radius: 8px;
+
+    transition: 0.2s;
+}
+
+.navegacao ul li a:hover
+{
+    background: rgba(255,255,255,0.08);
+
+    color: var(--cinza);
+}
+
+/* Conteúdo */
+
+.conteudo-site
+{
+    width: calc(100% - 270px);
+
+    margin-left: 270px;
+
+    padding: 30px;
+
+    transition: 0.4s;
+}
+
+.conteudo-site.active
+{
+    width: 100%;
+    margin-left: 0;
+}
+
+.menu
+{
+    position: fixed;
+
+    top: 15px;
+    left: 15px;
+
+    z-index: 2000;
+
+    display: none;
+
+    padding: 10px;
+
+    border-radius: 10px;
+
+    transition: 0.2s;
+
+    background: var(--cor-card);
+
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+.menu:hover
+{
+    background: rgba(0,0,0,0.05);
+}
+
+.menu img
+{
+    width: 28px;
+}
+
+.conteudo-site h1
+{
+    margin-top: 30px;
+    margin-bottom: 10px;
+
+    font-family: 'Poppins', sans-serif;
+    font-size: 38px;
+    font-weight: 700;
+
+    color: var(--cor-primaria);
+}
+
+.linha-divisoria
+{
+    width: 100%;
+    max-width: 180px;
+
+    height: 4px;
+
+    border: none;
+
+    background: var(--cor-borda);
+
+    border-radius: 20px;
+
+    margin-top: 8px;
+}
+
+/* Seções */
+
+section
+{
+    margin-top: 90px;
+}
+
+section h2
+{
+    font-family: 'Poppins', sans-serif;
+    font-size: 28px;
+    font-weight: 600;
+
+    color: var(--cor-texto);
+}
+
+section h3
+{
+    margin-top: 30px;
+    margin-bottom: 15px;
+
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+
+    color: var(--cor-texto);
+}
+
+section p
+{
+    margin-top: 20px;
+
+    font-size: 18px;
+    line-height: 1.9;
+
+    color: var(--cor-texto-conteudo);
+}
+
+/* Cards de páginas */
+
+.paginas
+{
+    margin-top: 40px;
+
+    padding: 25px;
+
+    background: var(--cor-card);
+
+    border: 1px solid var(--cor-borda);
+
+    border-radius: 16px;
+
+    box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+}
+
+.paginas ul
+{
+    list-style: none;
+}
+
+.paginas ul li
+{
+    margin-bottom: 14px;
+}
+
+.paginas ul li a
+{
+    display: block;
+
+    padding: 14px 18px;
+
+    background: var(--cor-card-secundaria);
+
+    border-radius: 10px;
+
+    text-decoration: none;
+
+    color: var(--cor-link);
+
+    font-size: 17px;
+    font-weight: 500;
+
+    transition: 0.2s;
+}
+
+.paginas ul li a:hover
+{
+    background: var(--cor-primaria);
+
+    color: var(--branco);
+
+    transform: translateX(4px);
+}
+
+/* Listas */
+
+section ul
+{
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+section ul li
+{
+    margin-bottom: 12px;
+
+    color: var(--cor-texto-conteudo);
+
+    font-size: 17px;
+    line-height: 1.7;
+}
+
+/* Links */
+
+a
+{
+    color: var(--cor-link);
+}
+
+a:hover
+{
+    color: var(--cor-primaria);
+}
+
+.imgs-docs{
+    width: 80%;
+}
+
+/* Formulário */
+
+.formulario-container
+{
+    width: 100%;
+
+    margin-top: 35px;
+
+    padding: 20px;
+
+    background: var(--cor-card);
+
+    border: 1px solid var(--cor-borda);
+
+    border-radius: 18px;
+
+    box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+}
+
+.formulario-container iframe
+{
+    width: 100%;
+
+    min-height: 2000px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background: white;
+}
+
+/* Responsivo */
+
+@media(max-width: 900px)
+{
+    .sidebar
+    {
+        transform: translateX(-100%);
+    }
+
+    .sidebar.active
+    {
+        transform: translateX(0%);
+    }
+
+    .conteudo-site
+    {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .conteudo-site.active
+    {
+        margin-left: 0;
+    }
+
+    .conteudo-site h1
+    {
+        font-size: 30px;
+    }
+
+    section h2
+    {
+        font-size: 24px;
+    }
+
+    section p
+    {
+        font-size: 16px;
+    }
+
+    .paginas ul li a
+    {
+        font-size: 16px;
+    }
+
+    .formulario-container
+    {
+        padding: 10px;
+    }
+
+    .formulario-container iframe
+    {
+        min-height: 2150px;
+    }    
+    .menu{
+        display: inline-flex;
+    }
+}
