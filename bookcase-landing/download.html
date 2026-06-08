@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Download • BookCase</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+    --dourado:#E68C3A;
+    --azul:#213E60;
+    --azul-profundo:#0e1d30;
+
+    --texto:#e9edf3;
+    --sec:#9ba9bb;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Inter',sans-serif;
+    background:var(--azul-profundo);
+    color:white;
+}
+
+.container{
+    max-width:1100px;
+    margin:auto;
+    padding:0 24px;
+}
+
+header{
+    padding:40px 0;
+}
+
+.logo{
+    font-size:2rem;
+    font-weight:800;
+    color:var(--dourado);
+}
+
+.hero{
+    text-align:center;
+    padding:80px 0;
+}
+
+.hero h1{
+    font-size:4rem;
+    letter-spacing:-3px;
+    margin-bottom:20px;
+}
+
+.hero p{
+    color:var(--sec);
+    max-width:700px;
+    margin:auto;
+    line-height:1.8;
+}
+
+.download-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:30px;
+
+    padding-bottom:120px;
+}
+
+.card{
+    background:rgba(255,255,255,0.04);
+
+    border:1px solid rgba(255,255,255,0.08);
+
+    border-radius:30px;
+
+    padding:40px;
+}
+
+.card small{
+    color:var(--dourado);
+    font-weight:700;
+    letter-spacing:2px;
+}
+
+.card h2{
+    margin:15px 0;
+    font-size:2rem;
+}
+
+.version{
+    color:var(--sec);
+    margin-bottom:30px;
+}
+
+.platforms{
+    display:grid;
+    gap:12px;
+    margin-bottom:30px;
+}
+
+.platform{
+    background:rgba(255,255,255,0.05);
+    border-radius:14px;
+    padding:16px;
+}
+
+.btn{
+    display:inline-block;
+
+    background:var(--dourado);
+    color:white;
+
+    text-decoration:none;
+
+    padding:16px 26px;
+    border-radius:14px;
+
+    font-weight:700;
+}
+
+.download-buttons{
+    display:flex;
+    gap:14px;
+    flex-wrap:wrap;
+    margin-top:30px;
+}
+
+.download-btn{
+    flex:1;
+
+    text-align:center;
+
+    text-decoration:none;
+
+    padding:18px;
+
+    border-radius:14px;
+
+    background:rgba(255,255,255,.05);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    color:white;
+
+    font-weight:600;
+
+    transition:.2s;
+}
+
+.download-btn:hover{
+    transform:translateY(-2px);
+
+    border-color:rgba(230,140,58,.35);
+
+    background:rgba(255,255,255,.08);
+}
+
+.pro{
+    border-color:rgba(230,140,58,.25);
+}
+
+.pro ul{
+    list-style:none;
+    margin:25px 0;
+    display:grid;
+    gap:12px;
+}
+
+.pro li{
+    color:var(--texto);
+}
+
+@media(max-width:900px){
+
+    .hero h1{
+        font-size:2.8rem;
+    }
+
+    .download-grid{
+        grid-template-columns:1fr;
+    }
+}
+
+</style>
+</head>
+<body>
+
+<div class="container">
+
+<header>
+
+    <div class="logo">
+        BookCase
+    </div>
+
+</header>
+
+<section class="hero">
+
+    <h1>
+        Download do BookCase
+    </h1>
+
+    <p>
+        Utilize gratuitamente a versão Community.
+        Para suporte técnico, atualizações prioritárias
+        e novos recursos, conheça o plano Pro.
+    </p>
+
+</section>
+
+<section class="download-grid">
+
+    <div class="card">
+
+        <small>VERSÃO GRATUITA</small>
+
+        <h2>
+            BookCase Community
+        </h2>
+
+        <div class="version">
+            Versão 1.2.0
+        </div>
+
+        <p>
+            Gratuito para sempre.
+        </p>
+
+        <div class="download-buttons">
+
+            <a href="download/BookCase-Windows.zip"
+            class="download-btn">
+                🪟 Windows
+            </a>
+
+            <a href="downloads/bookcase-linux.AppImage"
+            class="download-btn">
+                🐧 Linux
+            </a>
+
+        </div>
+
+    </div>
+
+    <div class="card pro">
+
+        <small>BOOKCASE PRO</small>
+
+        <h2>
+            R$ 100/ano
+        </h2>
+
+        <p>
+            Apoie o desenvolvimento do projeto
+            e tenha acesso às novidades primeiro.
+        </p>
+
+        <ul>
+            <li>✔ Suporte técnico</li>
+            <li>✔ Novos recursos</li>
+            <li>✔ Atualizações prioritárias</li>
+            <li>✔ Recursos exclusivos</li>
+        </ul>
+
+        <a href="mailto:maiconvieiradev@gmail.com"
+           class="btn">
+            Entrar em contato
+        </a>
+
+    </div>
+
+</section>
+
+</div>
+
+</body>
+</html>

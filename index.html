@@ -1,35 +1,21 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Maicon Vieira • Desenvolvedor de Software</title>
-
-<meta name="description"
-content="Portfólio de Maicon Vieira, desenvolvedor focado em sistemas web, software desktop, Flask, Python e soluções funcionais.">
+<title>Maicon Vieira</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-<link rel="shortcut icon" href="src/imgs/programming-code-signs.ico">
-
 <style>
-
 :root{
-    --dourado: #E68C3A;
-
-    --azul: #213E60;
-    --azul-escuro: #162c46;
-    --azul-profundo: #0e1d30;
-
-    --branco: #F4F2EF;
-
-    --texto-claro: #e9edf3;
-    --texto-secundario: #9ba9bb;
-
-    --borda: rgba(255,255,255,0.08);
+    --bg:#0f1724;
+    --card:#172233;
+    --text:#f5f5f5;
+    --muted:#9ca3af;
+    --accent:#E68C3A;
+    --line:#253246;
 }
 
 *{
@@ -38,809 +24,319 @@ content="Portfólio de Maicon Vieira, desenvolvedor focado em sistemas web, soft
     box-sizing:border-box;
 }
 
-html{
-    scroll-behavior:smooth;
-}
-
 body{
-    font-family:'Inter', sans-serif;
-    background:var(--azul-profundo);
-    color:white;
-    overflow-x:hidden;
+    font-family:Inter,sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    line-height:1.7;
 }
-
-/* ========================= */
 
 .container{
-    width:100%;
-    max-width:1200px;
+    width:min(1150px,92%);
     margin:auto;
-    padding:0 28px;
 }
-
-/* ========================= */
 
 header{
-    position:fixed;
-    width:100%;
-    top:0;
-    z-index:1000;
-
-    backdrop-filter:blur(18px);
-
-    background:rgba(14,29,48,0.7);
-
-    border-bottom:1px solid rgba(255,255,255,0.05);
+    padding:35px 0;
 }
 
-.navbar{
-    height:80px;
-
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-}
-
-.logo{
-    font-size:1.7rem;
-    font-weight:800;
-    color:var(--dourado);
-}
-
-.nav-links{
+nav{
     display:flex;
     gap:24px;
 }
 
-.nav-links a{
-    color:#d4deea;
+nav a{
+    color:var(--muted);
     text-decoration:none;
-    font-weight:500;
-    transition:.2s;
 }
 
-.nav-links a:hover{
+nav a:hover{
     color:white;
 }
 
-/* ========================= */
-
 .hero{
-    min-height:100vh;
-
-    display:flex;
+    display:grid;
+    grid-template-columns:1.2fr .8fr;
+    gap:70px;
     align-items:center;
-
-    position:relative;
-    overflow:hidden;
-}
-
-.hero::before{
-    content:"";
-
-    position:absolute;
-
-    width:900px;
-    height:900px;
-
-    background:radial-gradient(circle, rgba(230,140,58,0.12), transparent 70%);
-
-    top:-300px;
-    right:-300px;
-}
-
-.hero::after{
-    content:"";
-
-    position:absolute;
-
-    width:700px;
-    height:700px;
-
-    background:radial-gradient(circle, rgba(33,62,96,0.7), transparent 70%);
-
-    bottom:-250px;
-    left:-200px;
-}
-
-.hero-content{
-    position:relative;
-    z-index:2;
-
-    max-width:850px;
-}
-
-.hero small{
-    color:var(--dourado);
-
-    font-weight:700;
-    letter-spacing:2px;
-
-    font-size:.9rem;
+    min-height:75vh;
 }
 
 .hero h1{
-    font-size:5rem;
+    font-size:clamp(3rem,6vw,5rem);
     line-height:1;
-
-    margin:20px 0 30px;
-
-    letter-spacing:-4px;
+    margin-bottom:24px;
 }
 
 .hero p{
-    color:var(--texto-secundario);
-
-    font-size:1.2rem;
-    line-height:1.8;
-
-    max-width:700px;
+    font-size:1.15rem;
+    color:var(--muted);
+    max-width:650px;
 }
 
-.hero-buttons{
-    display:flex;
-    gap:18px;
-    flex-wrap:wrap;
-
-    margin-top:40px;
+.featured{
+    background:var(--card);
+    border:1px solid rgba(230,140,58,.25);
+    border-radius:24px;
+    padding:36px;
 }
 
-.btn-primary{
-    background:var(--dourado);
-    color:white;
-
-    text-decoration:none;
-
-    padding:18px 32px;
-
-    border-radius:16px;
-
-    font-weight:700;
-
-    transition:.2s;
-}
-
-.btn-primary:hover{
-    transform:translateY(-3px);
-    background:#cf7728;
-}
-
-.btn-secondary{
-    border:1px solid rgba(255,255,255,0.08);
-
-    color:white;
-
-    text-decoration:none;
-
-    padding:18px 32px;
-
-    border-radius:16px;
-
-    font-weight:600;
-
-    transition:.2s;
-}
-
-.btn-secondary:hover{
-    background:rgba(255,255,255,0.05);
-}
-
-/* ========================= */
-
-section{
-    padding:120px 0;
-}
-
-.section-title{
-    margin-bottom:60px;
-}
-
-.section-title h2{
-    font-size:3rem;
-    margin-bottom:16px;
-    letter-spacing:-2px;
-}
-
-.section-title p{
-    color:var(--texto-secundario);
-    max-width:700px;
-}
-
-/* ========================= */
-
-.projects-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-    gap:24px;
-}
-
-.project{
-    background:rgba(255,255,255,0.03);
-
-    border:1px solid rgba(255,255,255,0.06);
-
-    border-radius:28px;
-
-    padding:34px;
-
-    transition:.25s;
-}
-
-.project:hover{
-    transform:translateY(-6px);
-
-    border-color:rgba(230,140,58,0.25);
-
-    background:rgba(255,255,255,0.05);
-}
-
-.project-featured{
-    border:1px solid rgba(230,140,58,0.3);
-
-    background:linear-gradient(
-        145deg,
-        rgba(230,140,58,0.08),
-        rgba(255,255,255,0.03)
-    );
-}
-
-.project small{
-    display:inline-block;
-
-    color:var(--dourado);
-
-    margin-bottom:18px;
-
+.featured small{
+    color:var(--accent);
     font-weight:700;
     letter-spacing:1px;
 }
 
-.project h3{
-    font-size:1.6rem;
-    margin-bottom:16px;
-}
-
-.project p{
-    color:var(--texto-secundario);
-    line-height:1.8;
-    margin-bottom:24px;
-}
-
-.project ul{
-    list-style:none;
-
-    display:flex;
-    flex-wrap:wrap;
-    gap:10px;
-
-    margin-bottom:28px;
-}
-
-.project li{
-    background:rgba(255,255,255,0.06);
-
-    padding:8px 12px;
-
-    border-radius:10px;
-
-    font-size:.85rem;
-}
-
-.project-links{
-    display:flex;
-    gap:18px;
-    flex-wrap:wrap;
-}
-
-.project-links a{
-    color:#dbe5f1;
-    text-decoration:none;
-    font-weight:600;
-}
-
-.project-links a:hover{
-    color:var(--dourado);
-}
-
-/* ========================= */
-
-.about{
-    background:rgba(255,255,255,0.02);
-}
-
-.about-content{
-    max-width:850px;
-}
-
-.about p{
-    color:var(--texto-secundario);
-
-    line-height:1.9;
-
-    margin-bottom:24px;
-}
-
-.stacks{
-    display:flex;
-    flex-wrap:wrap;
-    gap:12px;
-
-    list-style:none;
-
-    margin-top:30px;
-}
-
-.stacks li{
-    background:rgba(255,255,255,0.05);
-
-    border:1px solid rgba(255,255,255,0.05);
-
-    padding:10px 14px;
-
-    border-radius:12px;
-}
-
-/* ========================= */
-
-.social{
-    display:flex;
-    gap:20px;
-    flex-wrap:wrap;
-
-    margin-top:40px;
-}
-
-.social a{
-    color:#d8e2ee;
-    text-decoration:none;
-
-    font-weight:600;
-}
-
-.social a:hover{
-    color:var(--dourado);
-}
-
-/* ========================= */
-
-footer{
-    border-top:1px solid rgba(255,255,255,0.05);
-
-    padding:40px 0;
-
-    text-align:center;
-}
-
-footer p{
-    color:#8090a3;
-}
-
-/* ========================= */
-/* LIVRO */
-/* ========================= */
-
-.chronicles{
-    background:linear-gradient(
-        180deg,
-        rgba(230,140,58,0.03),
-        transparent
-    );
-}
-
-.book-card{
-    background:rgba(255,255,255,0.03);
-    border:1px solid rgba(230,140,58,0.18);
-    border-radius:28px;
-    padding:40px;
-    max-width:900px;
-}
-
-.book-card small{
-    color:var(--dourado);
-    font-weight:700;
-    letter-spacing:1px;
-}
-
-.book-card h3{
-    margin:16px 0;
+.featured h2{
+    margin:12px 0;
     font-size:2rem;
 }
 
-.book-card p{
-    color:var(--texto-secundario);
-    line-height:1.9;
+.featured p{
+    margin-bottom:24px;
 }
 
-/* ========================= */
+.btn{
+    display:inline-block;
+    background:var(--accent);
+    color:white;
+    text-decoration:none;
+    padding:14px 22px;
+    border-radius:12px;
+    font-weight:700;
+}
+
+.content{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:60px;
+    padding:80px 0;
+    border-top:1px solid var(--line);
+}
+
+.section-title{
+    margin-bottom:24px;
+    color:var(--muted);
+    font-size:.9rem;
+    letter-spacing:2px;
+    text-transform:uppercase;
+}
+
+.item{
+    margin-bottom:28px;
+}
+
+.item a{
+    text-decoration:none;
+    color:white;
+    font-size:1.15rem;
+    font-weight:600;
+}
+
+.item a:hover{
+    color:var(--accent);
+}
+
+.item p{
+    color:var(--muted);
+    margin-top:4px;
+}
+
+footer{
+    border-top:1px solid var(--line);
+    padding:40px 0;
+    color:var(--muted);
+    text-align: center;
+}
+
+.author{
+    border-top:1px solid var(--line);
+    padding:70px 0;
+    text-align:center;
+}
+
+.author img{
+    width:90px;
+    height:90px;
+    border-radius:50%;
+    object-fit:cover;
+    margin-bottom:18px;
+
+    border:2px solid rgba(230,140,58,.15);
+}
+
+.author h3{
+    margin-bottom:8px;
+    font-size:1.1rem;
+}
+
+.author p{
+    color:var(--muted);
+    max-width:420px;
+    margin:0 auto;
+}
+
+.author-links{
+    margin-top:18px;
+
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.author-links a{
+    color:var(--muted);
+    text-decoration:none;
+}
+
+.author-links a:hover{
+    color:var(--accent);
+}
 
 @media(max-width:900px){
 
-    .hero h1{
-        font-size:3.5rem;
+    .hero{
+        grid-template-columns:1fr;
+        min-height:auto;
+        padding:40px 0 60px;
     }
 
-    .section-title h2{
-        font-size:2.3rem;
+    .content{
+        grid-template-columns:1fr;
+        gap:40px;
     }
 
-    .nav-links{
-        display:none;
+    .featured{
+        margin-top:10px;
     }
 }
-
 </style>
-
 </head>
-
 <body>
 
+<div class="container">
+
 <header>
-
-    <div class="container navbar">
-
-        <div class="logo">
-            Maicon Vieira
-        </div>
-
-        <div class="nav-links">
-
-            <a href="#projects">
-                Projetos
-            </a>
-
-            <a href="#about">
-                Sobre
-            </a>
-
-            <a href="#chronicles">
-                Livro
-            </a>
-
-            <a href="https://github.com/maiconjsv" target="_blank">
-                GitHub
-            </a>
-
-            <a href="bookcase-landing/index.html" target="_blank">BookCase</a>
-
-        </div>
-
-    </div>
-
+    <nav>
+        <a href="https://github.com/maiconjsv">GitHub</a>
+        <a href="https://www.linkedin.com/in/maiconjsv/">LinkedIn</a>
+        <a href="src/downloads/MaiconJuniorsv (1).pdf">Currículo</a>
+    </nav>
 </header>
-
-<!-- HERO -->
 
 <section class="hero">
 
-    <div class="container">
+    <div>
 
-        <div class="hero-content">
+        <h1>Maicon Vieira</h1>
 
-            <small>
-                DESENVOLVIMENTO, ESCRITA E PROJETOS INDEPENDENTES
-            </small>
+        <p>
+            Desenvolvedor de software, amante da literatura e aspirante a escritor.
+            Construo sistemas para resolver problemas reais e escrevo histórias
+            sobre castelos, reis esquecidos e mundos à beira do colapso.
+        </p>
 
-            <h1>
-                Eu construo software, escrevo histórias e transformo ideias em produtos.
-            </h1>
+    </div>
 
-            <p>
-                Meu site pessoal onde divulgo meus projetos. Sou desenvolvedor de software focado em sistemas web,
-                automações e aplicações desktop. Atualmente trabalhando na Solus Software e
+    <aside class="featured">
 
-                paralelamente tenho escrito um livro de dark fantasy.
-            </p>
+        <small>PROJETO PRINCIPAL</small>
 
-            <div class="hero-buttons">
+        <h2>BookCase</h2>
 
-                <a href="#projects" class="btn-primary">
-                    Ver projetos
-                </a>
+        <p>
+            Sistema de gestão para sebos e livrarias independentes,
+            desenvolvido para simplificar estoque, vendas e operação diária.
+        </p>
 
-                <a href="#chronicles" class="btn-secondary">
-                    As crônicas do castelo alto
-                </a>
+        <a class="btn" href="bookcase-landing/bookcase.html">
+            Ir para o BookCase →
+        </a>
 
-                <a href="bookcase-landing/index.html" class="btn-secondary">Sistema BookCase</a>
+    </aside>
 
-            </div>
+</section>
 
+<section class="content">
+
+    <div>
+
+        <div class="section-title">Projetos</div>
+
+        <div class="item">
+            <a href="cronicas/index.html">As Crônicas do Castelo Alto →</a>
+            <p>Romance de fantasia sombria em desenvolvimento.</p>
+        </div>
+
+        <div class="item">
+            <a href="https://macielemoraisadvogados.com.br/">
+                Maciel & Morais →
+            </a>
+            <p>Landing page para escritório de advocacia.</p>
+        </div>
+
+        <div class="item">
+            <a href="https://github.com/maiconjsv/wstaion">
+                WStation →
+            </a>
+            <p>Ferramenta CLI para produtividade pessoal.</p>
+        </div>
+
+    </div>
+
+    <div>
+
+        <div class="section-title">Escritos</div>
+
+        <div class="item">
+            <a href="cronicas/contos/a_ovelha_desgarrada.html">
+                A Ovelha Desgarrada →
+            </a>
+            <p>Conto ambientado no universo das Crônicas do Castelo Alto.</p>
+        </div>
+
+        <div class="item">
+            <a href="cronicas/cronicas_do_castelo_alto.html">
+                Ver todos os textos →
+            </a>
+            <p>Contos, notas e material do universo.</p>
         </div>
 
     </div>
 
 </section>
 
-<section id="chronicles" class="chronicles">
+<section class="author">
 
-    <div class="container">
+    <img src="src/imgs/mmyphoto.png" alt="Maicon Vieira">
 
-        <div class="section-title">
+    <h3>Maicon Vieira</h3>
 
-            <h2>
-                As Crônicas do Castelo Alto
-            </h2>
+    <p>
+        Desenvolvedor de software, escritor de fantasia sombria
+        e criador do BookCase.
+    </p>
 
-            <p>
-                Um romance de fantasia sombria em desenvolvimento.
-            </p>
+    <div class="author-links">
 
-        </div>
+        <a href="https://github.com/maiconjsv">
+            GitHub
+        </a>
 
-        <div class="book-card">
-
-            <small>
-                PROJETO LITERÁRIO
-            </small>
-
-            <h3>
-                As Crônicas do Castelo Alto
-            </h3>
-
-            <p>
-                Livro inspirado em Dark Souls, Berserk e Game of Thrones, com uma trama divida em três personagens que se aventuram em um mundo próprio.
-            </p>
-
-            <div class="hero-buttons">
-
-                <a href="cronicas/index.html" class="btn-primary">
-                    Página do projeto
-                </a>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-<!-- PROJETOS -->
-
-<section id="projects">
-
-    <div class="container">
-
-        <div class="section-title">
-
-            <h2>
-                Projetos
-            </h2>
-
-            <p>
-                Alguns projetos desenvolvidos focando em performance,
-                simplicidade e experiência do usuário.
-            </p>
-
-        </div>
-
-        <div class="projects-grid">
-
-            <!-- BOOKCASE -->
-
-            <div class="project project-featured">
-
-                <small>
-                    PROJETO PRINCIPAL
-                </small>
-
-                <h3>
-                    Bookcase
-                </h3>
-
-                <p>
-                    Sistema de gerenciamento para sebos com controle
-                    de estoque, movimentações financeiras e cadastro
-                    de livros e produtos.
-                </p>
-
-                <ul>
-                    <li>Python</li>
-                    <li>Flask</li>
-                    <li>TypeScript</li>
-                    <li>Windows</li>
-                    <li>Linux</li>
-                </ul>
-
-                <div class="project-links">
-
-                    <a href="doc-bookcase/index.html" target="_blank">
-                        Documentação
-                    </a>
-
-                </div>
-
-            </div>
-
-            <!-- PROJETO -->
-
-            <div class="project">
-
-                <small>
-                    FREELANCE
-                </small>
-
-                <h3>
-                    Maciel & Morais Advogados
-                </h3>
-
-                <p>
-                    Landing page desenvolvida com foco em SEO,
-                    captação de clientes e integração ao WhatsApp.
-                </p>
-
-                <ul>
-                    <li>JavaScript</li>
-                    <li>HTML</li>
-                    <li>CSS</li>
-                    <li>SEO</li>
-                </ul>
-
-                <div class="project-links">
-
-                    <a href="https://macielemoraisadvogados.com.br/" target="_blank">
-                        Ver projeto
-                    </a>
-
-                </div>
-
-            </div>
-
-            <!-- PROJETO -->
-
-            <div class="project">
-
-                <small>
-                    PROJETO PESSOAL
-                </small>
-
-                <h3>
-                    Wstaion
-                </h3>
-
-                <p>
-                    Sistema CLI para produtividade diária inspirado
-                    no curso CS50.
-                </p>
-
-                <ul>
-                    <li>C</li>
-                    <li>Windows</li>
-                    <li>Linux</li>
-                </ul>
-
-                <div class="project-links">
-
-                    <a href="https://github.com/maiconjsv/wstaion" target="_blank">
-                        Repositório
-                    </a>
-
-                </div>
-
-            </div>
-
-            <!-- PROJETO -->
-
-            <div class="project">
-
-                <small>
-                    SISTEMA WEB
-                </small>
-
-                <h3>
-                    Controle de pátio
-                </h3>
-
-                <p>
-                    Sistema web para gerenciamento e organização
-                    de veículos em pátio.
-                </p>
-
-                <ul>
-                    <li>JavaScript</li>
-                    <li>Firebase</li>
-                    <li>Web</li>
-                </ul>
-
-                <div class="project-links">
-
-                    <a href="https://github.com/maiconjsv/Sistema-para-Higienizador-de-frota" target="_blank">
-                        Repositório
-                    </a>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-<!-- SOBRE -->
-
-<section class="about" id="about">
-
-    <div class="container">
-
-        <div class="about-content">
-
-            <div class="section-title">
-
-                <h2>
-                    Sobre
-                </h2>
-
-            </div>
-
-            <p>
-                Desenvolvedor focado em sistemas web e automações,
-                com experiência prática em manutenção de sistemas
-                legados Delphi e desenvolvimento de soluções modernas utilizando
-                Python, Flask e SQL.
-            </p>
-
-            <p>
-                Atualmente desenvolvo projetos próprios voltados
-                para gestão comercial, produtividade e software
-                independente, com foco em aplicações leves,
-                funcionais e de longo prazo.
-            </p>
-
-            <h3>
-                Stack principal
-            </h3>
-
-            <ul class="stacks">
-
-                <li>Python</li>
-                <li>Flask</li>
-                <li>Delphi</li>
-                <li>SQL</li>
-                <li>JavaScript</li>
-                <li>TypeScript</li>
-                <li>HTML</li>
-                <li>CSS</li>
-                <li>SQLite</li>
-                <li>MySQL</li>
-                <li>Oracle Database</li>
-
-            </ul>
-
-            <div class="social">
-
-                <a href="https://github.com/maiconjsv" target="_blank">
-                    GitHub
-                </a>
-
-                <a href="https://www.linkedin.com/in/maiconjsv/" target="_blank">
-                    LinkedIn
-                </a>
-
-                <a href="src/downloads/MaiconJuniorsv (1).pdf" download="curriculum.pdf">
-                    Currículo
-                </a>
-
-            </div>
-
-        </div>
+        <a href="https://www.linkedin.com/in/maiconjsv/">
+            LinkedIn
+        </a>
 
     </div>
 
 </section>
 
 <footer>
-
-    <div class="container">
-
-        <p>
-            © 2026 Maicon Vieira • Desenvolvedor, escritor e criador de projetos independentes.
-        </p>
-
-    </div>
-
+    Feito por Maicon Vieira.
 </footer>
+
+</div>
 
 </body>
 </html>
