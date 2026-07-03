@@ -9,6 +9,20 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="src/css/index.css">
 <link rel="shortcut icon" href="src/imgs/programming-code-signs.ico" type="image/x-icon">
+<script src="https://www.gstatic.com/firebasejs/11.6.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/11.6.0/firebase-analytics-compat.js"></script>
+<script>
+  firebase.initializeApp({
+    apiKey: "AIzaSyB0e7r5EDOQdeDZS0lYmhp35fCt8jISciw",
+    authDomain: "maiconvieira-f5a91.firebaseapp.com",
+    projectId: "maiconvieira-f5a91",
+    storageBucket: "maiconvieira-f5a91.firebasestorage.app",
+    messagingSenderId: "183264541160",
+    appId: "1:183264541160:web:6ef32a02d0f5ab52520c5d",
+    measurementId: "G-KMHNDN0YG2"
+  });
+  firebase.analytics();
+</script>
 
 </head>
 <body>
@@ -62,7 +76,7 @@
         <div class="item">
             <a href="https://github.com/maiconjsv/bookcase" data-i18n="projeto-bookcase-title">BookCase →
             </a>
-            <span class="tech-stack">PHP · JavaScript · MySQL · Firebase</span>
+            <span class="tech-stack">Flask · JavaScript · SQLite </span>
             <p data-i18n="projeto-bookcase-desc">Sistema web para gerenciamento de sebos com cadastro de livros, controle de estoque e caixa.</p>
         </div>
 
@@ -150,6 +164,20 @@
 
     </div>
 
+<div class="cookie-notice" id="cookie-notice">
+    <p>Este site usa cookies do Google Analytics para medir audiência. Ao continuar, você concorda.</p>
+    <button onclick="aceitarCookies()">OK</button>
+</div>
+
 <script src="src/js/lang.js"></script>
+<script>
+function aceitarCookies(){
+    document.getElementById('cookie-notice').classList.add('hidden');
+    localStorage.setItem('cookies-aceitos','1');
+}
+if(localStorage.getItem('cookies-aceitos')){
+    document.getElementById('cookie-notice').classList.add('hidden');
+}
+</script>
 </body>
 </html>

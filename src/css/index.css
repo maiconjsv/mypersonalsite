@@ -361,6 +361,52 @@ footer{
     color:var(--accent);
 }
 
+.cookie-notice{
+    position:fixed;
+    bottom:24px;
+    right:24px;
+    max-width:380px;
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:12px;
+    padding:16px 20px;
+    display:flex;
+    align-items:center;
+    gap:14px;
+    z-index:9999;
+    transition:opacity .3s, transform .3s;
+}
+
+.cookie-notice.hidden{
+    opacity:0;
+    transform:translateY(20px);
+    pointer-events:none;
+}
+
+.cookie-notice p{
+    color:var(--muted);
+    font-size:.82rem;
+    line-height:1.5;
+    margin:0;
+}
+
+.cookie-notice button{
+    flex-shrink:0;
+    background:var(--accent);
+    border:none;
+    color:white;
+    font-weight:600;
+    font-size:.8rem;
+    padding:8px 16px;
+    border-radius:8px;
+    cursor:pointer;
+    transition:background .2s;
+}
+
+.cookie-notice button:hover{
+    background:#cf7728;
+}
+
 @media(max-width:900px){
 
     .hero{
