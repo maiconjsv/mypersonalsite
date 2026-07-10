@@ -173,6 +173,89 @@ footer{
     text-align: center;
 }
 
+.freelance{
+    border-top:1px solid var(--line);
+    padding:70px 0;
+}
+
+.freelance-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(320px,1fr));
+    gap:20px;
+}
+
+.freelance-card{
+    display:flex;
+    flex-direction:column;
+    background:var(--card);
+    border-radius:10px;
+    text-decoration:none;
+    color:var(--text);
+    border:1px solid var(--line);
+    overflow:hidden;
+    transition:border-color .2s,transform .2s;
+}
+
+.freelance-card:hover{
+    border-color:var(--accent);
+    transform:translateY(-4px);
+}
+
+.freelance-thumb{
+    position:relative;
+    width:100%;
+    aspect-ratio:16/10;
+    overflow:hidden;
+    background:var(--bg);
+}
+
+.freelance-thumb img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+}
+
+.freelance-hint{
+    position:absolute;
+    inset:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:rgba(15,23,36,.85);
+    color:var(--accent);
+    font-size:.9rem;
+    font-weight:600;
+    letter-spacing:.5px;
+    opacity:0;
+    transition:opacity .25s;
+}
+
+.freelance-card:hover .freelance-hint{
+    opacity:1;
+}
+
+.freelance-body{
+    padding:16px;
+}
+
+.freelance-body strong{
+    display:block;
+    font-size:1rem;
+    font-weight:600;
+}
+
+.freelance-body .tech-stack{
+    margin-top:4px;
+}
+
+.freelance-body p{
+    color:var(--muted);
+    font-size:.85rem;
+    margin-top:4px;
+    line-height:1.4;
+}
+
 .courses{
     border-top:1px solid var(--line);
     padding:70px 0;
