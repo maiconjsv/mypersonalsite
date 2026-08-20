@@ -16,6 +16,7 @@ const langs = {
     'projeto-bookcase-title': { pt: 'BookCase →', en: 'BookCase →' },
     'projeto-bookcase-desc': { pt: 'Sistema web para gerenciamento de sebos com cadastro de livros, controle de estoque e caixa.', en: 'Web system for used bookstore management with book registration, inventory and cash control.' },
     'projeto-adv-title': { pt: 'Maciel & Morais →', en: 'Maciel & Morais →' },
+    'mcemorais': { pt: 'Maciel & Morais Advocacia →', en: 'Maciel & Morais Advocacia →' },
     'projeto-adv-desc': { pt: 'Landing page responsiva para escrit\u00f3rio de advocacia.', en: 'Responsive landing page for a law firm.' },
     'projeto-patio-title': { pt: 'Controle de p\u00e1tio →', en: 'Yard Control →' },
     'projeto-patio-desc': { pt: 'Sistema para controle e higieniza\u00e7\u00e3o de ve\u00edculos em quiosque Localiza.', en: 'System for vehicle fleet cleaning and control at a Localiza kiosk.' },
@@ -47,6 +48,9 @@ const langs = {
     'author-github': { pt: 'GitHub', en: 'GitHub' },
     'author-linkedin': { pt: 'LinkedIn', en: 'LinkedIn' },
     'card-hint': { pt: 'Ver certificado →', en: 'View certificate →' },
+    'section-artigos': { pt: 'Artigos', en: 'Articles' },
+    'blog-teaser-text': { pt: 'Escrevo sobre infraestrutura, desenvolvimento e experiências práticas dos meus projetos.', en: 'I write about infrastructure, development and practical experiences from my projects.' },
+    'blog-teaser-link': { pt: 'Ver todos os artigos →', en: 'See all articles →' },
 };
 function setLang(lang) {
     document.documentElement.lang = lang === 'pt' ? 'pt-BR' : 'en';

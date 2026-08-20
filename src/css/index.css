@@ -399,6 +399,29 @@ footer{
     color:var(--accent);
 }
 
+.blog-teaser{
+    border-top:1px solid var(--line);
+    padding:40px 0;
+}
+
+.blog-teaser-text{
+    color:var(--muted);
+    font-size:.9rem;
+    max-width:500px;
+    margin-bottom:10px;
+}
+
+.blog-teaser-link{
+    color:var(--accent);
+    text-decoration:none;
+    font-size:.9rem;
+    font-weight:600;
+}
+
+.blog-teaser-link:hover{
+    color:white;
+}
+
 .author{
     border-top:1px solid var(--line);
     padding:70px 0;
