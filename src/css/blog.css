@@ -1,20 +1,21 @@
 :root{
-    --bg:#0f1724;
-    --card:#172233;
-    --text:#f5f5f5;
-    --muted:#9ca3af;
-    --accent:#E68C3A;
-    --line:#253246;
+    --bg:#33332d;
+    --card:#403f38;
+    --text:#ffffff;
+    --muted:#c7c6bf;
+    --accent:#e68c3a;
+    --line:#514f45;
+    --font-mono:'IBM Plex Mono',Consolas,monospace;
 
     --bs-body-bg:var(--bg);
     --bs-body-color:var(--text);
     --bs-border-color:var(--line);
     --bs-link-color:var(--accent);
-    --bs-link-hover-color:#fff;
+    --bs-link-hover-color:var(--text);
 }
 
 body{
-    font-family:Inter,sans-serif;
+    font-family:'IBM Plex Sans',Inter,sans-serif;
     background:var(--bg);
 }
 
@@ -23,7 +24,7 @@ a{
 }
 
 .navbar{
-    border-bottom:1px solid var(--line);
+    border-bottom:3px solid var(--accent);
 }
 
 .navbar-brand{
@@ -40,8 +41,17 @@ a{
     color:var(--text) !important;
 }
 
+.navbar-toggler{
+    border-color:var(--muted) !important;
+}
+
+.navbar-toggler-icon{
+    filter:invert(1);
+}
+
 .eyebrow{
-    color:var(--muted);
+    color:var(--accent);
+    font-family:var(--font-mono);
     font-size:.8rem;
     letter-spacing:2px;
     text-transform:uppercase;
@@ -64,6 +74,7 @@ a{
 }
 
 .post-card .post-date{
+    font-family:var(--font-mono);
     color:var(--muted);
     font-size:.78rem;
     letter-spacing:.5px;
@@ -101,6 +112,7 @@ a{
 }
 
 .article-meta{
+    font-family:var(--font-mono);
     color:var(--muted);
     font-size:.88rem;
     margin-top:10px;
@@ -120,12 +132,16 @@ a{
 
 .article-body p{
     margin-bottom:1.1rem;
-    color:#e5e7eb;
+    color:var(--text);
 }
 
 .article-body ul{
-    color:#e5e7eb;
+    color:var(--text);
     margin-bottom:1.1rem;
+}
+
+.article-body a{
+    color:var(--accent);
 }
 
 .article-body img{
@@ -145,6 +161,7 @@ a{
 
 .toc-card .toc-title{
     color:var(--muted);
+    font-family:var(--font-mono);
     font-size:.78rem;
     letter-spacing:1.5px;
     text-transform:uppercase;

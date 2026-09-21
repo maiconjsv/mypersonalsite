@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Case study técnico do BookCase: como projetei estoque, cadastro de livros e um caixa com PDV para sebos usando Flask, PostgreSQL e nginx.">
+    <meta name="keywords" content="BookCase, case study, Flask, PostgreSQL, nginx, sistema para sebo, controle de estoque, PDV, ponto de venda, portfólio desenvolvedor">
+    <meta name="author" content="Maicon Vieira">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://maiconvieira.dev/src/blog/bookcase-case-study.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="BookCase: construindo um sistema de gestão para sebos com Flask e PostgreSQL">
+    <meta property="og:description" content="Como projetei estoque, cadastro de livros e um caixa com PDV para sebos, e os desafios técnicos de manter tudo consistente em produção.">
+    <meta property="og:url" content="https://maiconvieira.dev/src/blog/bookcase-case-study.html">
+    <meta property="og:image" content="https://maiconvieira.dev/src/imgs/og-bookcase-case-study.jpg">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="article:published_time" content="2026-09-05">
+    <meta property="article:author" content="Maicon Vieira">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="BookCase: construindo um sistema de gestão para sebos com Flask e PostgreSQL">
+    <meta name="twitter:description" content="Case study técnico: estoque, cadastro de livros e caixa com PDV para sebos, do design ao deploy em produção.">
+    <meta name="twitter:image" content="https://maiconvieira.dev/src/imgs/og-bookcase-case-study.jpg">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "BookCase: construindo um sistema de gestão para sebos com Flask e PostgreSQL",
+      "description": "Case study técnico do BookCase: como projetei estoque, cadastro de livros e um caixa com PDV para sebos usando Flask, PostgreSQL e nginx.",
+      "datePublished": "2026-09-05",
+      "image": "https://maiconvieira.dev/src/imgs/og-bookcase-case-study.jpg",
+      "author": { "@type": "Person", "name": "Maicon Vieira", "url": "https://maiconvieira.dev/" },
+      "mainEntityOfPage": "https://maiconvieira.dev/src/blog/bookcase-case-study.html"
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/blog.css">
+    <link rel="shortcut icon" href="../imgs/programming-code-signs.ico" type="image/x-icon">
+    <title>BookCase: case study de um sistema para sebos | Maicon Vieira</title>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-md">
+    <div class="container">
+        <a class="navbar-brand" href="../../index.html">Maicon Vieira</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navMenu">
+            <ul class="navbar-nav gap-md-3">
+                <li class="nav-item"><a class="nav-link" href="../../index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="index.html">Artigos</a></li>
+                <li class="nav-item"><a class="nav-link" href="https://github.com/maiconjsv">GitHub</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<main class="container py-5">
+
+    <a class="back-link d-inline-block mb-4" href="index.html">← Voltar aos artigos</a>
+
+    <div class="row">
+        <div class="col-lg-8">
+
+            <article itemscope itemtype="https://schema.org/BlogPosting">
+                <header class="article-header">
+                    <div class="eyebrow mb-2">Case study</div>
+                    <h1 itemprop="headline">BookCase: construindo um sistema de gestão para sebos com Flask e PostgreSQL</h1>
+                    <div class="article-meta">
+                        <span itemprop="author">Maicon Vieira</span> ·
+                        <time itemprop="datePublished" datetime="2026-09-05">5 de setembro de 2026</time>
+                    </div>
+                </header>
+
+                <div class="article-body">
+
+                    <h3 id="o-problema">O problema</h3>
+                    <p>Sebos e livrarias de pequeno porte costumam controlar estoque e caixa em planilha ou em caderno — o que funciona até o acervo passar de algumas centenas de itens. Sistemas de PDV prontos no mercado geralmente são genéricos demais (feitos para varejo comum, sem noção de "livro" como tipo de item) ou caros demais para o porte de um sebo pequeno. O <a href="https://bookcase.montiqtech.com.br" target="_blank" rel="noopener">BookCase</a> nasceu para preencher esse meio-termo: um sistema simples, direto e barato de operar, pensado especificamente para o dia a dia de um sebo.</p>
+
+                    <h3 id="arquitetura">Arquitetura</h3>
+                    <p>O backend é em <strong>Flask</strong>, com <strong>PostgreSQL</strong> como banco relacional e <strong>nginx</strong> como reverse proxy na frente da aplicação. A stack toda roda numa VPS que administro diretamente — escolha que detalhei em outro <a href="vms-baratas-interserver.html">artigo sobre como escolhi o provedor</a> — o que me obrigou a cuidar de firewall, deploy e backup do banco por conta própria, sem depender de uma plataforma gerenciada.</p>
+                    <p>Optei por Flask em vez de um framework mais "batteries included" porque o escopo do sistema é bem definido (estoque, cadastro e caixa) e eu queria controle fino sobre as rotas e sobre como o banco é modelado, sem carregar funcionalidades que não seriam usadas.</p>
+
+                    <h3 id="estoque">Estoque e cadastro de livros</h3>
+                    <p>O módulo de estoque foi desenhado em torno de duas telas principais: <em>entrada de livros</em> e <em>listagem de livros</em>. Na entrada, defini quais campos são obrigatórios no cadastro — sendo a <em>prateleira</em> o único que precisa ser parametrizado antes, para manter a localização física do item consistente com o que está no sistema. Na listagem, o usuário pesquisa e filtra por critérios como "sem estoque", o que evita o problema clássico de tentar vender algo que já saiu do acervo.</p>
+                    <p>Também adicionei suporte a <strong>categorias personalizadas</strong>, para que cada sebo organize o acervo do seu próprio jeito em vez de seguir uma taxonomia fixa que eu tivesse decidido de antemão — livro raro, livro didático, HQ, cada operação tem sua própria lógica de organização.</p>
+
+                    <h3 id="caixa">Caixa e ponto de venda</h3>
+                    <p>O caixa funciona como um PDV simples: busca de item por nome ou título, adição ao carrinho e finalização da venda. O ponto que exigiu mais cuidado foi garantir que uma venda concluída <strong>baixe o estoque automaticamente</strong> — sem isso, as duas telas (estoque e caixa) divergem em poucos dias de uso real, e a confiança no sistema desaba. Toda venda também é registrada na tela de <em>movimentações de caixa</em>, com valor, data, quantidade de itens e usuário responsável, filtrável por período — o que dá ao dono do sebo uma visão de fechamento de caixa sem precisar de planilha paralela.</p>
+
+                    <h3 id="desafios">Desafios técnicos</h3>
+                    <ul>
+                        <li><strong>Consistência estoque × vendas:</strong> modelar a baixa de estoque como parte da mesma transação da venda, para não deixar o banco em estado inconsistente se algo falhar no meio do processo.</li>
+                        <li><strong>Cadastro flexível:</strong> livros e produtos genéricos (marcadores, acessórios) precisavam conviver no mesmo fluxo de estoque e caixa sem duplicar lógica.</li>
+                        <li><strong>Deploy e operação própria:</strong> como a aplicação roda numa VPS administrada por mim, tive que configurar nginx, SSH com chave, backup do PostgreSQL e atualizações de segurança — a mesma disciplina que aplico monitorando ambientes críticos no trabalho, só que do outro lado, como responsável pela infraestrutura.</li>
+                    </ul>
+
+                    <h3 id="resultado">Resultado</h3>
+                    <p>O BookCase está em produção em <a href="https://bookcase.montiqtech.com.br" target="_blank" rel="noopener">bookcase.montiqtech.com.br</a>, cobrindo o ciclo completo de um sebo pequeno: cadastro e entrada de livros, controle de estoque por categoria e prateleira, e caixa com histórico de movimentações. É o projeto onde mais claramente uni as duas partes do que eu faço — escrever a aplicação e manter a infraestrutura em que ela roda.</p>
+
+                    <h3 id="proximos-passos">Próximos passos</h3>
+                    <p>Os pontos que pretendo evoluir: relatórios de vendas por período mais completos, controle de usuários com permissões por função, e testes automatizados cobrindo o fluxo de venda + baixa de estoque, que hoje depende principalmente de teste manual antes de cada deploy.</p>
+
+                </div>
+            </article>
+
+            <div class="comments-card">
+                <script src="https://giscus.app/client.js"
+                        data-repo="maiconjsv/mypersonalsite"
+                        data-repo-id="R_kgDOQtVkHg"
+                        data-category="General"
+                        data-category-id="DIC_kwDOQtVkHs4C4uLk"
+                        data-mapping="url"
+                        data-strict="0"
+                        data-reactions-enabled="1"
+                        data-emit-metadata="1"
+                        data-input-position="top"
+                        data-theme="dark_tritanopia"
+                        data-lang="pt"
+                        data-loading="lazy"
+                        crossorigin="anonymous"
+                        async>
+                </script>
+            </div>
+
+        </div>
+
+        <aside class="col-lg-4 d-none d-lg-block">
+            <div class="toc-card">
+                <div class="toc-title">Neste artigo</div>
+                <ul>
+                    <li><a href="#o-problema">O problema</a></li>
+                    <li><a href="#arquitetura">Arquitetura</a></li>
+                    <li><a href="#estoque">Estoque e cadastro de livros</a></li>
+                    <li><a href="#caixa">Caixa e ponto de venda</a></li>
+                    <li><a href="#desafios">Desafios técnicos</a></li>
+                    <li><a href="#resultado">Resultado</a></li>
+                    <li><a href="#proximos-passos">Próximos passos</a></li>
+                </ul>
+            </div>
+        </aside>
+    </div>
+
+</main>
+
+<footer class="site-footer">
+    Maicon Vieira
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

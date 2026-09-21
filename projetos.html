@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projetos | Maicon Vieira</title>
+<meta name="description" content="Detalhes técnicos dos projetos de Maicon Vieira: BookCase (Flask, PostgreSQL, nginx), Controle de pátio (Firebase) e a landing page da Maciel & Morais Advocacia.">
+<meta name="keywords" content="Maicon Vieira, projetos, portfólio, BookCase, Flask, PostgreSQL, Firebase, Controle de pátio, desenvolvedor de software">
+<meta name="author" content="Maicon Vieira">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://maiconvieira.dev/projetos.html">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Projetos | Maicon Vieira">
+<meta property="og:description" content="Detalhes técnicos dos projetos de Maicon Vieira: BookCase, Controle de pátio e a landing page da Maciel & Morais Advocacia.">
+<meta property="og:url" content="https://maiconvieira.dev/projetos.html">
+<meta property="og:image" content="https://maiconvieira.dev/src/imgs/menew.png">
+<meta property="og:locale" content="pt_BR">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Projetos | Maicon Vieira">
+<meta name="twitter:description" content="Detalhes técnicos dos projetos de Maicon Vieira: BookCase, Controle de pátio e a landing page da Maciel & Morais Advocacia.">
+<meta name="twitter:image" content="https://maiconvieira.dev/src/imgs/menew.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Projetos de Maicon Vieira",
+  "url": "https://maiconvieira.dev/projetos.html",
+  "author": { "@type": "Person", "name": "Maicon Vieira", "url": "https://maiconvieira.dev/" }
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="src/css/index.css">
+<link rel="shortcut icon" href="src/imgs/programming-code-signs.ico" type="image/x-icon">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <div class="logo">Maicon Vieira</div>
+            <nav>
+                <a class="nav-highlight" href="src/blog/index.html">Blog</a>
+                <a href="https://github.com/maiconjsv">GitHub</a>
+                <a href="https://www.linkedin.com/in/maiconjsv/">LinkedIn</a>
+                <a href="src/downloads/curriculum-pt-br.pdf" target="_blank">Currículo</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+
+        <section class="page-header">
+            <a class="back-link" href="index.html">← Voltar</a>
+            <h1>Projetos</h1>
+            <p>Detalhamento técnico dos projetos que desenvolvi — problema real, decisões de arquitetura e stack usada em cada um.</p>
+        </section>
+
+        <section class="project-detail">
+            <div class="project-detail-head">
+                <h2>BookCase</h2>
+                <span class="project-status">Em produção</span>
+            </div>
+            <span class="tech-stack">Flask · JavaScript · PostgreSQL · nginx</span>
+            <p>Sistema de gestão para sebos e livrarias de pequeno porte, cobrindo cadastro e estoque de livros e um caixa com PDV. Nasceu porque sistemas de PDV genéricos não têm noção de "livro" como tipo de item, e as alternativas prontas eram caras demais para o porte de um sebo pequeno. Roda numa VPS que administro diretamente — nginx como reverse proxy, PostgreSQL como banco, deploy e backup por minha conta.</p>
+            <ul class="project-feature-list">
+                <li>Cadastro e entrada de livros, com parametrização de prateleira para manter a localização física consistente</li>
+                <li>Controle de estoque por categorias personalizadas e filtro por disponibilidade</li>
+                <li>Caixa com PDV: busca por nome/título, carrinho e baixa automática de estoque na venda</li>
+                <li>Movimentações de caixa com valor, data, itens e usuário, filtráveis por período</li>
+                <li>Infraestrutura própria: firewall, SSH com chave, backup de banco e atualizações de segurança</li>
+            </ul>
+            <div class="project-links">
+                <a class="btn btn-accent" href="https://bookcase.montiqtech.com.br" target="_blank" rel="noopener">Ver site →</a>
+                <a class="btn" href="src/blog/bookcase-case-study.html">Case study completo →</a>
+            </div>
+        </section>
+
+        <section class="project-detail">
+            <div class="project-detail-head">
+                <h2>Controle de pátio</h2>
+                <span class="project-status">v0.3 · em uso ativo</span>
+            </div>
+            <span class="tech-stack">Firebase · JavaScript · NoSQL</span>
+            <p>Sistema para a equipe de um quiosque da Localiza Seminovos no Catuaí Shopping (Londrina) controlar veículos no pátio. Antes, o controle era manual, o que gerava inconsistências no inventário — agravado pelo pátio ficar dois andares de distância da equipe de vendas. Desenvolvi a aplicação do zero, com foco em front-end e integração em tempo real com banco de dados.</p>
+            <ul class="project-feature-list">
+                <li>Login de usuários via Firebase Authentication, com alterações restritas a usuários cadastrados</li>
+                <li>Integração em tempo real com Firestore</li>
+                <li>Registro de higienizações e saída de veículos, com consulta de status (no pátio ou não)</li>
+                <li>Interface responsiva, com acesso via smartphone, tablet ou desktop</li>
+            </ul>
+            <div class="project-links">
+                <a class="btn btn-accent" href="https://github.com/maiconjsv/Sistema-para-Higienizador-de-frota" target="_blank" rel="noopener">Ver repositório →</a>
+            </div>
+        </section>
+
+        <section class="project-detail">
+            <div class="project-detail-head">
+                <h2>Maciel & Morais Advocacia</h2>
+                <span class="project-status">Em produção</span>
+            </div>
+            <span class="tech-stack">HTML · CSS · JavaScript</span>
+            <p>Landing page responsiva desenvolvida sob demanda para um escritório de advocacia, do layout mobile-first ao deploy em produção — projeto de cliente real, fora do meu portfólio pessoal de sistemas.</p>
+            <div class="project-links">
+                <a class="btn btn-accent" href="https://macielemoraisadvogados.com.br/" target="_blank" rel="noopener">Ver site →</a>
+            </div>
+        </section>
+
+    </div>
+
+</body>
+</html>
